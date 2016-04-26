@@ -14,12 +14,12 @@ RUN apt-get update \
         screen \
     && pip install --upgrade paramiko PyYAML Jinja2 httplib2 six
 
-WORKDIR /root
+WORKDIR /opt
 
 # Install Ansible From Source
 RUN git clone git://github.com/ansible/ansible.git --recursive
 
-WORKDIR /root/ansible
+WORKDIR /opt/ansible
 
 # Compiling Ansible
 RUN bash -c 'source ./hacking/env-setup'
@@ -32,7 +32,10 @@ RUN mkdir -p /etc/ansible \
 
 # Disable Host Key Checking
 # See http://docs.ansible.com/ansible/intro_getting_started.html#host-key-checking
-ENV ANSIBLE_HOST_KEY_CHECKING   False
+ENV ANSIBLE_HOST_KEY_CHECKING False
+
+ENV PATH /opt/ansible/bin:$PATH
+ENV PYTHONPATH /opt/ansible/lib:$PYTHONPATH
 
 # default command: display Ansible version
 CMD [ "ansible-playbook", "--version" ]
