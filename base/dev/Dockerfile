@@ -23,4 +23,6 @@ RUN apt-get update \
         screen \
         git
 
-RUN rm -r /var/lib/apt/lists/*
+# Clean Up
+RUN apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

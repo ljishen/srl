@@ -31,8 +31,3 @@ ENV PATH /opt/ansible/bin:$PATH
 ENV PYTHONPATH /opt/ansible/lib:$PYTHONPATH
 
 WORKDIR /root
-ADD ansible.cfg ansible.cfg
-ADD entrypoint.sh entrypoint.sh
-ADD hosts hosts
-
-ENTRYPOINT ["entrypoint.sh"]

@@ -1,0 +1,13 @@
+- name: download ga4gh data
+  unarchive: src={{ data_source }} dest=/tmp copy=no
+    
+- name: start ga4gh reference server
+  docker:
+    image: afirth/ga4gh-server
+    name: ga4gh_server
+    state: reloaded
+    volumes: /tmp/{{ data_source_folder }}:/data:ro
+    ports: 80:{{ server_public_port }}
+    env:
+      GA4GH_DEBUG: True
+      GA4GH_DATA_SOURCE: /data
