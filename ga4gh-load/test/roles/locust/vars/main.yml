@@ -1,2 +1,2 @@
 ---
-locustfile_url: http://
+locustfile_url: https://raw.githubusercontent.com/ljishen/SRL/master/ga4gh-load/locust/locustfile.py
