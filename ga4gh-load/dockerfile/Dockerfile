@@ -11,7 +11,6 @@ RUN apt-get update \
         python-dev \
         git \
         vim \
-        screen \
     && pip install --upgrade paramiko PyYAML Jinja2 httplib2 six
 
 WORKDIR /opt
@@ -25,14 +24,13 @@ WORKDIR /opt/ansible
 RUN bash -c 'source ./hacking/env-setup'
 
 # Clean Up
-RUN rm -r /var/lib/apt/lists/*
-
-WORKDIR /root
-ADD hosts hosts
-ADD ansible.cfg ansible.cfg
+RUN apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV PATH /opt/ansible/bin:$PATH
 ENV PYTHONPATH /opt/ansible/lib:$PYTHONPATH
 
-# default command: display Ansible version
-CMD [ "ansible-playbook", "--version" ]
+WORKDIR /root
+ADD src/ src/
+
+ENTRYPOINT ["src/entrypoint.sh"]
