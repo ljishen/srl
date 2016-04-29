@@ -8,9 +8,10 @@ MAINTAINER Jianshen Liu <jliu120@ucsc.edu>
 # Note: libffi-dev is required for paramiko
 RUN apt-get update \
     && apt-get install -y \
-        python-pip \ 
+        python-pip \
         python-dev \
         libffi-dev \
+        libssl-dev \
         git \
         vim \
     && pip install --upgrade paramiko PyYAML Jinja2 httplib2 six
