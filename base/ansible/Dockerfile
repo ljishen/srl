@@ -5,11 +5,12 @@ FROM ubuntu:latest
 MAINTAINER Jianshen Liu <jliu120@ucsc.edu>
 
 # Install Prerequisites
+# Note: libffi-dev is required for paramiko
 RUN apt-get update \
     && apt-get install -y \
         python-pip \ 
         python-dev \
-        libffi-dev \ # required for paramiko
+        libffi-dev \
         git \
         vim \
     && pip install --upgrade paramiko PyYAML Jinja2 httplib2 six
