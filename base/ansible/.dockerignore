@@ -1,0 +1,4 @@
+*.yaml
+*.cfg
+hosts
+users
