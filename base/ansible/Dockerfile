@@ -9,6 +9,7 @@ RUN apt-get update \
     && apt-get install -y \
         python-pip \ 
         python-dev \
+        libffi-dev \ # required for paramiko
         git \
         vim \
     && pip install --upgrade paramiko PyYAML Jinja2 httplib2 six
