@@ -1,4 +1,3 @@
 ---
 data_source: https://github.com/ga4gh/server/releases/download/data/ga4gh-example-data-v3.2.tar
 data_source_folder: ga4gh-example-data
-server_public_port: 80

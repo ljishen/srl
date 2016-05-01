@@ -1,2 +1,3 @@
 ---
+# a filename relative to the current user's home directory
 ssh_key_file: .ssh/id_rsa

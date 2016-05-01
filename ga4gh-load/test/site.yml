@@ -1,18 +1,14 @@
 - name: install docker 
   hosts: all
   roles:
-      - role:
-          - common
+    - common
 
 - name: start ga4gh reference server 
   hosts: server
   roles:
-      - role:
-          - server
+    - server
 
 - name: start locust
    hosts: locust
-   become: True
    roles:
-       - role:
-           - locust
+     - locust

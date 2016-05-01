@@ -7,7 +7,6 @@
     name: ga4gh_server
     state: reloaded
     volumes: /tmp/{{ data_source_folder }}:/data:ro
-    ports: 80:{{ server_public_port }}
     env:
       GA4GH_DEBUG: True
       GA4GH_DATA_SOURCE: /data
