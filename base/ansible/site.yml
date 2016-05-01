@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+    - name: make sure the ssh public key exist
+      user:
+        name: "{{ ansible_user_id }}"
+        generate_ssh_key: yes
+        ssh_key_file: "{{ ssh_key_file }}"
+
+- hosts: server 
+  become: true
+  roles:
+    - user 

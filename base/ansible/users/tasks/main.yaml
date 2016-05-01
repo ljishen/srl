@@ -1,6 +1,0 @@
----
-- name: create user
-  user: name={{ user }} password={{ user }}_{{ passwd }} groups={{ gruops }} append=yes shell=/bin/bash
-
-- name: Add authorized key
-  authorized_key: user={{ user }} key={{ user }}_{{ publickey }} state=present
