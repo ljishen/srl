@@ -9,4 +9,5 @@
     name: locust
     state: reloaded
     volumes: /tmp/locustfile.py:/root/locustfile.py:ro
+    ports: 8089:8089
     command: /usr/local/bin/locust --host={{ groups['server'][0] }}
