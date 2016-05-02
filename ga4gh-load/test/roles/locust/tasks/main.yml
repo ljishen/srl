@@ -1,12 +1,13 @@
 ---
 - name: download locustfile.py
-  get_url: url={{ locustfile_url }} dest={{ playbook_dir }}/locustfile.py force=yes
+  get_url: url={{ locustfile_url }} dest={{ locustfile_path }} force=yes
   when: locustfile_url is defined
 
 - name: start locust
   docker:
     image: ljishen/locust
     name: locust
-    state: reloaded
+    state: reloaded 
+    detach: False
     volumes: /tmp/locustfile.py:/root/locustfile.py:ro
-    entrypoint: locust --host={{ server[0] }}
+    entrypoint: locust --host={{ hostvars[groups['server'][0]] }}

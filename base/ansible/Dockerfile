@@ -14,7 +14,7 @@ RUN apt-get update \
         libssl-dev \
         git \
         vim \
-    && pip install --upgrade paramiko PyYAML Jinja2 httplib2 six
+    && pip install --upgrade pycrypto paramiko PyYAML Jinja2 httplib2 six
 
 WORKDIR /opt
 
