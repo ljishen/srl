@@ -12,6 +12,7 @@ RUN apt-get update \
         python-dev \
         libffi-dev \
         libssl-dev \
+        sshpass \
         git \
         vim \
     && pip install --upgrade pycrypto paramiko PyYAML Jinja2 httplib2 six

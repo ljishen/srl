@@ -12,6 +12,6 @@
 
 - name: start locust
   hosts: locust
-  gather_facts: no 
+  gather_facts: no
   roles:
     - locust

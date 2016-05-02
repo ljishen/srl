@@ -7,7 +7,6 @@
   docker:
     image: ljishen/locust
     name: locust
-    state: reloaded 
-    detach: False
+    state: reloaded
     volumes: /tmp/locustfile.py:/root/locustfile.py:ro
-    entrypoint: locust --host={{ hostvars[groups['server'][0]] }}
+    command: /usr/local/bin/locust --host={{ groups['server'][0] }}
