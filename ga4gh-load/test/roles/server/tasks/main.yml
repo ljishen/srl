@@ -1,6 +1,9 @@
 - name: download ga4gh data
   unarchive: src={{ data_source }} dest=/tmp copy=no
-    
+
+- name: download NCBI37 Reference set
+  unarchive: src={{ ncbi37_ref_set }} dest=/tmp/{{ data_source_folder }} copy=no
+
 - name: start ga4gh reference server
   docker:
     image: afirth/ga4gh-server
