@@ -1,5 +1,6 @@
 ---
-data_source: https://github.com/ga4gh/server/releases/download/data/ga4gh-example-data-v3.2.tar
+data_source_url: https://github.com/ga4gh/server/releases/download/data/ga4gh-example-data-v3.2.tar
 data_source_path: /tmp
 data_source_folder: ga4gh-example-data
-ncbi37_ref_set: ftp://piha.soe.ucsc.edu/referenceSets.zip
+ncbi37_ref_set_url: ftp://piha.soe.ucsc.edu/referenceSets.zip
+sequence_annotations_url: https://ga4ghstore.blob.core.windows.net/testing/gencode_v24lift37.db

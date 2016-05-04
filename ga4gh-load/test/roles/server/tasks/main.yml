@@ -1,16 +1,22 @@
 - name: download ga4gh data
   unarchive:
-    src: "{{ data_source }}"
+    src: "{{ data_source_url }}"
     dest: "{{ data_source_path }}"
     copy: no
     creates: "{{ data_source_path }}/{{ data_source_folder }}"
 
 - name: download NCBI37 Reference set
   unarchive:
-    src: "{{ ncbi37_ref_set }}"
+    src: "{{ ncbi37_ref_set_url }}"
     dest: "{{ data_source_path }}/{{ data_source_folder }}"
     copy: no
     creates: "{{ data_source_path }}/{{ data_source_folder }}/referenceSets/NCBI37"
+
+- name: download sequence annotations db
+  get_url:
+    url: "{{ sequence_annotations_url }}"
+    dest: "{{ data_source_path }}/{{ data_source_folder }}/datasets/1kg-p3-subset/sequenceAnnotations/gencode_v24lift37.db"
+    force: no
 
 - name: start ga4gh reference server
   docker:
