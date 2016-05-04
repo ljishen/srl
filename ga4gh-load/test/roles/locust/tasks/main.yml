@@ -6,6 +6,9 @@
 - name: count locust hosts
   set_fact: num_hosts="{{ groups.locust | length }}"
 
+- name: show number of locust hosts
+  debug: msg="Number of Locust hosts is {{ num_hosts }}"
+
 - name: check if master
   set_fact: comm_args="--master"
   when: (num_hosts != "1") and (groups.locust.index(inventory_hostname) == 0)

@@ -1,15 +1,23 @@
 - name: download ga4gh data
-  unarchive: src={{ data_source }} dest=/tmp copy=no
+  unarchive:
+    src: "{{ data_source }}"
+    dest: "{{ data_source_path }}"
+    copy: no
+    creates: "{{ data_source_path }}/{{ data_source_folder }}"
 
 - name: download NCBI37 Reference set
-  unarchive: src={{ ncbi37_ref_set }} dest=/tmp/{{ data_source_folder }} copy=no
+  unarchive:
+    src: "{{ ncbi37_ref_set }}"
+    dest: "{{ data_source_path }}/{{ data_source_folder }}"
+    copy: no
+    creates: "{{ data_source_path }}/{{ data_source_folder }}/referenceSets/NCBI37"
 
 - name: start ga4gh reference server
   docker:
     image: afirth/ga4gh-server
     name: ga4gh_server
     state: reloaded
-    volumes: /tmp/{{ data_source_folder }}:/data:ro
+    volumes: "{{ data_source_path }}/{{ data_source_folder }}:/data:ro"
     ports: 80:80
     env:
       GA4GH_DEBUG: True

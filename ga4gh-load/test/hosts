@@ -1,6 +1,7 @@
 # The first host is master if multiple hosts define
 [locust]
-192.168.140.82  ansible_ssh_user=issdm
+piha.soe.ucsc.edu	ansible_ssh_user=issdm
+192.168.140.82		ansible_ssh_user=issdm	
 
 [server]
-192.168.140.82  ansible_ssh_user=issdm 
+piha.soe.ucsc.edu  ansible_ssh_user=issdm 
