@@ -5,12 +5,13 @@
     copy: no
     creates: "{{ data_source_path }}/{{ data_source_folder }}"
 
-- name: download NCBI37 Reference set
-  unarchive:
-    src: "{{ ncbi37_ref_set_url }}"
-    dest: "{{ data_source_path }}/{{ data_source_folder }}"
-    copy: no
-    creates: "{{ data_source_path }}/{{ data_source_folder }}/referenceSets/NCBI37"
+# Temporary disable this resource until server docker image updated
+#- name: download NCBI37 Reference set
+#  unarchive:
+#    src: "{{ ncbi37_ref_set_url }}"
+#    dest: "{{ data_source_path }}/{{ data_source_folder }}"
+#    copy: no
+#    creates: "{{ data_source_path }}/{{ data_source_folder }}/referenceSets/NCBI37"
 
 - name: download sequence annotations db
   get_url:
