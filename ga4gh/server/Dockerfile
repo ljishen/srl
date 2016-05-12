@@ -8,6 +8,7 @@ MAINTAINER Jianshen Liu <jliu120@ucsc.edu>
 RUN apt-get update \
     && apt-get install -y \
         python-dev \
+        python-pip \
         python-virtualenv \
         zlib1g-dev \
         libxslt1-dev \
