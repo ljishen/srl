@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "machine,limits,benchmark,class,lower_is_better,repetition,result" > alltests.csv
+
+for m in `ls -d data/*` ; do
+  machine=`basename $m .json | cut -d _ -f 2`
+  method=`basename $m .json | cut -d _ -f 1`
+  repetition='1'
+
+  jq -r --arg m $method --arg n $machine --arg r $repetition '.[] | [$n,  $m, .name, .class, .lower_is_better, $r, .result] | @csv' $m >> alltests.csv
+done
