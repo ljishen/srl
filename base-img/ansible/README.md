@@ -1,0 +1,1 @@
+# Ansible ImageThis image contains ansible(v2.0.2.0-1) installed from source according to the [official documentation](http://docs.ansible.com/ansible/intro_installation.html#running-from-source)

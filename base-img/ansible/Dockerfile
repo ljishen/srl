@@ -1,4 +1,4 @@
-# VERSION 1.0
+# VERSION 1.1
 
 FROM ubuntu:latest
 
@@ -14,13 +14,12 @@ RUN apt-get update \
         libssl-dev \
         sshpass \
         git \
-        vim \
     && pip install --upgrade pycrypto paramiko PyYAML Jinja2 httplib2 six
 
 WORKDIR /opt
 
 # Install Ansible From Source
-RUN git clone git://github.com/ansible/ansible.git --recursive
+RUN git clone git://github.com/ansible/ansible.git --recursive --branch v2.0.2.0-1
 
 WORKDIR /opt/ansible
 
@@ -34,4 +33,5 @@ RUN apt-get clean \
 ENV PATH /opt/ansible/bin:$PATH
 ENV PYTHONPATH /opt/ansible/lib:$PYTHONPATH
 
-WORKDIR /root
+ENTRYPOINT ["ansible-playbook"]
+CMD ["--version"]

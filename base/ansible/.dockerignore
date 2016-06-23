@@ -1,5 +1,0 @@
-*.yaml
-*.cfg
-hosts
-users
-group_vars
