@@ -1,0 +1,29 @@
+##########  KV Drive  ##########
+
+# stress-ng, version 0.06.06 
+make CC=gcc LDFLAGS=-lrt; make install
+
+# postprocess.py and stress-ng.sh should be in the same directory
+#   - stress-ng.sh -> entrypoint.sh
+#   - postprocess.py -> postprocess.py
+# From https://github.com/ljishen/docker-bench/tree/master/stress-ng
+./stress-ng.sh > without_kv3_1.json
+./stress-ng.sh > without_kv3_2.json
+
+cp without_kv3_2.json base.json
+
+# Manually Add ```
+#  "id": "stress-ng",
+#  "docker_flags": "--rm --cpuset-cpus=3",
+#  "image_name": "ivotron/stress-ng",
+#  "image_args": "",
+# ```
+# to the head of base.json and wrap all tests results in a tests array.
+# See https://github.com/ivotron/torpor-popper/blob/master/ansible/tune-targets/base.json
+
+
+##########  issdm-6  ##########
+
+docker run --rm -ti --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_1.json
+docker run --rm -ti --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_2.json
+docker run --rm -ti --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_3.json
