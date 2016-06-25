@@ -1,0 +1,31 @@
+Unable to find image 'ivotron/torpor:latest' locally
+latest: Pulling from ivotron/torpor
+8b87079b7a06: Already exists
+a3ed95caeb02: Already exists
+7e33320c0baf: Pulling fs layer
+1a8e0cc6b349: Pulling fs layer
+1a8e0cc6b349: Download complete
+7e33320c0baf: Verifying Checksum
+7e33320c0baf: Download complete
+7e33320c0baf: Pull complete
+1a8e0cc6b349: Pull complete
+Digest: sha256:6dcc9410987b5a37272baf8440d5e11fea20551c1ca0dd085e97d7d2878e9824
+Status: Downloaded newer image for ivotron/torpor:latest
+[  1278s]    INFO opentuner.search.plugin.DisplayPlugin: tests=1, best {'cpu-quota': 10000}, cost time=397.5072, found by MonotonicSearch
+[  2537s]    INFO opentuner.search.plugin.DisplayPlugin: tests=2, best {'cpu-quota': 7750}, cost time=337.9071, found by MonotonicSearch
+[  3803s]    INFO opentuner.search.plugin.DisplayPlugin: tests=3, best {'cpu-quota': 5500}, cost time=241.9215, found by MonotonicSearch
+[  5087s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best {'cpu-quota': 3250}, cost time=143.1590, found by MonotonicSearch
+[  6459s]    INFO opentuner.search.plugin.DisplayPlugin: tests=5, best {'cpu-quota': 1000}, cost time=43.3504, found by MonotonicSearch
+[  7761s]    INFO opentuner.search.plugin.DisplayPlugin: tests=6, best {'cpu-quota': 1000}, cost time=43.3504, found by MonotonicSearch
+[  9107s]    INFO opentuner.search.plugin.DisplayPlugin: tests=7, best {'cpu-quota': 1000}, cost time=43.3504, found by MonotonicSearch
+[ 10469s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best {'cpu-quota': 1000}, cost time=43.3504, found by MonotonicSearch
+[ 11837s]    INFO opentuner.search.plugin.DisplayPlugin: tests=9, best {'cpu-quota': 1000}, cost time=43.3504, found by MonotonicSearch
+[ 13207s]    INFO opentuner.search.plugin.DisplayPlugin: tests=10, best {'cpu-quota': 1004}, cost time=43.3208, found by MonotonicSearch
+[ 14577s]    INFO opentuner.search.plugin.DisplayPlugin: tests=11, best {'cpu-quota': 1004}, cost time=43.3208, found by MonotonicSearch
+[ 15946s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best {'cpu-quota': 1004}, cost time=43.3208, found by MonotonicSearch
+[ 17316s]    INFO opentuner.search.plugin.DisplayPlugin: tests=13, best {'cpu-quota': 1004}, cost time=43.3208, found by MonotonicSearch
+[ 18687s]    INFO opentuner.search.plugin.DisplayPlugin: tests=14, best {'cpu-quota': 1003}, cost time=43.2030, found by MonotonicSearch
+[ 18688s] WARNING opentuner.search.technique: MonotonicSearch has not requested a new result for 50 rounds
+[ 18690s] WARNING opentuner.search.technique: MonotonicSearch has not requested a new result for 100 rounds
+[ 18692s] WARNING opentuner.search.technique: MonotonicSearch has not requested a new result for 150 rounds
+[ 18692s]    INFO opentuner.search.plugin.DisplayPlugin: tests=14, best {'cpu-quota': 1003}, cost time=43.2030, found by MonotonicSearch
