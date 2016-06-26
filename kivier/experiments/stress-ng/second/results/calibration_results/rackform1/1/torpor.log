@@ -1,0 +1,18 @@
+[  1273s]    INFO opentuner.search.plugin.DisplayPlugin: tests=1, best {'cpu-quota': 2000}, cost time=662.0601, found by MonotonicSearch
+[  2551s]    INFO opentuner.search.plugin.DisplayPlugin: tests=2, best {'cpu-quota': 1750}, cost time=197.0913, found by MonotonicSearch
+[  3832s]    INFO opentuner.search.plugin.DisplayPlugin: tests=3, best {'cpu-quota': 1750}, cost time=197.0913, found by MonotonicSearch
+[  5108s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best {'cpu-quota': 1750}, cost time=197.0913, found by MonotonicSearch
+[  6387s]    INFO opentuner.search.plugin.DisplayPlugin: tests=5, best {'cpu-quota': 1687}, cost time=196.3100, found by MonotonicSearch
+[  7667s]    INFO opentuner.search.plugin.DisplayPlugin: tests=6, best {'cpu-quota': 1624}, cost time=195.9481, found by MonotonicSearch
+[  8947s]    INFO opentuner.search.plugin.DisplayPlugin: tests=7, best {'cpu-quota': 1624}, cost time=195.9481, found by MonotonicSearch
+[ 10227s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best {'cpu-quota': 1624}, cost time=195.9481, found by MonotonicSearch
+[ 11507s]    INFO opentuner.search.plugin.DisplayPlugin: tests=9, best {'cpu-quota': 1624}, cost time=195.9481, found by MonotonicSearch
+[ 12787s]    INFO opentuner.search.plugin.DisplayPlugin: tests=10, best {'cpu-quota': 1632}, cost time=195.8891, found by MonotonicSearch
+[ 14067s]    INFO opentuner.search.plugin.DisplayPlugin: tests=11, best {'cpu-quota': 1632}, cost time=195.8891, found by MonotonicSearch
+[ 15347s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best {'cpu-quota': 1632}, cost time=195.8891, found by MonotonicSearch
+[ 16627s]    INFO opentuner.search.plugin.DisplayPlugin: tests=13, best {'cpu-quota': 1632}, cost time=195.8891, found by MonotonicSearch
+[ 17907s]    INFO opentuner.search.plugin.DisplayPlugin: tests=14, best {'cpu-quota': 1632}, cost time=195.8891, found by MonotonicSearch
+[ 17907s] WARNING opentuner.search.technique: MonotonicSearch has not requested a new result for 50 rounds
+[ 17908s] WARNING opentuner.search.technique: MonotonicSearch has not requested a new result for 100 rounds
+[ 17909s] WARNING opentuner.search.technique: MonotonicSearch has not requested a new result for 150 rounds
+[ 17909s]    INFO opentuner.search.plugin.DisplayPlugin: tests=14, best {'cpu-quota': 1632}, cost time=195.8891, found by MonotonicSearch

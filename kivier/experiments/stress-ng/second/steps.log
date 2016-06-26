@@ -69,9 +69,10 @@ root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# docker run --rm
 # Example: https://github.com/ivotron/torpor-popper/blob/master/ansible/tune-targets/base.json
 
 
-###########  Run torpor on issdm-6  ###########
+###########  Run torpor  ###########
 git clone https://github.com/ljishen/torpor.git
 
+##### issdm-6  ######
 # File base_without_kv3_4.json is in current working directory.
 torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=2000 --test-limit 15 --base-filename base_without_kv3_4.json
 
@@ -84,6 +85,14 @@ torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=2000 --test-
 # {"cpu-quota": 1000}
 
 # All the results from `torpor` saved to srl/kivier/experiments/stress-ng/second/results/calibration_results/issdm-6/ 
+
+##### rackform1  #####
+torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=2000 --test-limit 15 --base-filename base_without_kv3_4.json
+
+# We choose `stressng-cpu-sqrt` and `stressng-cpu-cpu`, the results moved to
+# srl/kivier/experiments/stress-ng/second/results/calibration_results/rackform1/1/
+# {"cpu-quota": 1632}   
+
 
 # We use the first result to re-run stress-ng
 ###########  issdm-6  ###########
@@ -122,4 +131,3 @@ root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ln all_data/wit
 # shows the greatest speedup is,
 # stressng-cpu-int64double,2.651071,issdm-6,with,cpu,False,1,33.66363,12.69812464471906
 # There are 28 stressors with the value of normalized greater than 1, 85 stressors less then 1.
-# It looks like this result is good enough right now.
