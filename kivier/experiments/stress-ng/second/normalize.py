@@ -2,12 +2,12 @@
 import sys
 import pandas as pd
 
-df = pd.read_csv('results/alltests.csv')
-
-if len(sys.argv) != 2:
-    raise Exception("Expecting one argument (base system name)")
+if len(sys.argv) != 3:
+    raise Exception("./normalize.py <base machine name> <data folder name inside results folder>")
 
 base_machine = sys.argv[1]
+folder_name = sys.argv[2]
+df = pd.read_csv('results/'+folder_name+'/alltests.csv')
 
 # get a dataframe base results only with columns 'benchmark' and 'result'
 predicate = (df['machine'] == base_machine) & (df['limits'] == 'without')
@@ -39,4 +39,4 @@ df['normalized'] = df.apply(normalize, axis=1)
 print("happened: " + str(happened))
 
 # and rewrite the results, now including the normalized column
-df.to_csv('results/alltests_with_normalized_results.csv', index=False)
+df.to_csv('results/'+folder_name+'/alltests_with_normalized_results.csv', index=False)

@@ -24,10 +24,9 @@ root@kv3:~/stress-ng-results#../stress-ng.sh > without_kv3_4.json
 
 
 ###########  issdm-6  ###########
-docker run --rm -ti --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_1.json
-docker run --rm -ti --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_2.json
-docker run --rm -ti --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_3.json
-
+docker run --rm --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_1.json
+docker run --rm --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_2.json
+docker run --rm --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_3.json
 
 ###########  rackform1  ###########
 docker run --rm --cpuset-cpus=1 ljishen/stress-ng > without_rackform1_1.json
@@ -36,29 +35,29 @@ docker run --rm --cpuset-cpus=1 ljishen/stress-ng > without_rackform1_3.json
 
 
 ###########  Choose stressors for calibration  ##########
-# Move all produced data to srl/kivier/experiments/stress-ng/second/all_data
-# Hard link one result file from each machine to srl/kivier/experiments/stress-ng/second/proc_data
-ln -f all_data/without_issdm-6_3.json proc_data/without_issdm-6_3.json
-ln -f all_data/without_rackform1_3.json proc_data/without_rackform1_3.json
-ln -f all_data/without_kv3_4.json proc_data/without_kv3_4.json
-ln -f all_data/without_kv1_4.json proc_data/without_kv1_4.json
+# Move all produced data to srl/kivier/experiments/stress-ng/second/all_data/without_limit
+# Hard link one result file from each machine to srl/kivier/experiments/stress-ng/second/proc_data/without_limit
+ln -f all_data/without_limit/without_issdm-6_3.json proc_data/without_limit/1/without_issdm-6_3.json
+ln -f all_data/without_limit/without_rackform1_3.json proc_data/without_limit/1/without_rackform1_3.json
+ln -f all_data/without_limit/without_kv3_4.json proc_data/without_limit/1/without_kv3_4.json
+ln -f all_data/without_limit/without_kv1_4.json proc_data/without_limit/1/without_kv1_4.json
 
-# Create merged results to srl/kivier/experiments/stress-ng/second/results/alltests.csv
-srl/kivier/experiments/stress-ng/second/merge_results
+# Create merged results to srl/kivier/experiments/stress-ng/second/results/without_limit/1/alltests.csv
+srl/kivier/experiments/stress-ng/second/merge_results without_limit/1
 
 # Run scipy jupyter notebook to run normalize.py and orderByNorm.py (need pandas library)
 root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# docker run --rm -ti -p 8880:8888 -v `pwd`:/home/jovyan/work:rw --user root --entrypoint=/bin/bash jupyter/scipy-notebook
 
 # Use results from kv3 as base to normalize, then output normalized results to
-# srl/kivier/experiments/stress-ng/second/results/alltests_with_normalized_results.csv
-./normalize.py kv3
+# srl/kivier/experiments/stress-ng/second/results/without_limit/1/alltests_with_normalized_results.csv
+./normalize.py kv3 without_limit/1
 
-# Only retain `machine=issdm-6` from srl/kivier/experiments/stress-ng/second/results/alltests_with_normalized_results.csv 
-# and order rows by values from column `normalizedo`, then output ordered results to
-# srl/kivier/experiments/stress-ng/second/results/alltests_with_normalized_ordered_results.csv
-./orderByNorm.py issdm-6
+# Only retain `machine=issdm-6` from srl/kivier/experiments/stress-ng/second/results/without_limit/1/alltests_with_normalized_results.csv 
+# and order rows by values from column `normalized`, then output ordered results to
+# srl/kivier/experiments/stress-ng/second/results/without_limit/1/alltests_with_normalized_ordered_results.csv
+./orderByNorm.py issdm-6 without_limit/1
 
-# At this point, srl/kivier/experiments/stress-ng/second/results/alltests_with_normalized_ordered_results.csv contains normalized values (issdm-6/kv3) order by desc.
+# At this point, srl/kivier/experiments/stress-ng/second/results/without_limit/1/alltests_with_normalized_ordered_results.csv contains normalized values (issdm-6/kv3) order by desc.
 # We choose two stressors from the list in file `alltests_with_normalized_ordered_results.csv`, and create `base_without_kv3_4.json` by manually adding
 # ```
 #  "id": "stress-ng",
@@ -74,10 +73,53 @@ root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# docker run --rm
 git clone https://github.com/ljishen/torpor.git
 
 # File base_without_kv3_4.json is in current working directory.
-torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=10000 --test-limit 15 --base-filename base_without_kv3_4.json
+torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=2000 --test-limit 15 --base-filename base_without_kv3_4.json
 
 # - First time, we choose stressor `stressng-cpu-sqrt` and `stressng-cpu-cpu`, the results moved to 
 # srl/kivier/experiments/stress-ng/second/results/calibration_results/issdm-6/1/
+# {"cpu-quota": 1750}
 #
 #- Second time, we only choose `stressng-cpu-cpu`, the results moved to
 # srl/kivier/experiments/stress-ng/second/results/calibration_results/issdm-6/2/
+# {"cpu-quota": 1000}
+
+# All the results from `torpor` saved to srl/kivier/experiments/stress-ng/second/results/calibration_results/issdm-6/ 
+
+# We use the first result to re-run stress-ng
+###########  issdm-6  ###########
+docker run --rm --cpuset-cpus=1 --cpu-quota=1750 ljishen/stress-ng > with_issdm-6_1.json
+docker run --rm --cpuset-cpus=1 --cpu-quota=1750 ljishen/stress-ng > with_issdm-6_2.json
+docker run --rm --cpuset-cpus=1 --cpu-quota=1750 ljishen/stress-ng > with_issdm-6_3.json
+
+# All produced data moved to srl/kivier/experiments/stress-ng/second/all_data/with_limit/1
+
+# Prepare process data
+root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ln all_data/without_limit/without_kv3_4.json proc_data/with_limit/1/without_kv3_4.json
+root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ln all_data/with_limit/1/with_issdm-6_3.json proc_data/with_limit/1/with_issdm-6_3.json
+
+root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ./merge_results with_limit/1
+
+# Run jupyter/scipy-notebook, then run the following commands.
+# The produced data is in srl/kivier/experiments/stress-ng/second/results/with_limit/1 
+./normalize.py kv3 with_limit/1
+./orderByNorm.py issdm-6 with_limit/1
+
+# At this point the file `srl/kivier/experiments/stress-ng/second/results/with_limit/1/alltests_with_normalized_ordered_issdm-6_results.csv`
+# shows the greatest speedup is the following one.
+# stressng-cpu-int64double,2.651071,issdm-6,with,cpu,False,3,59.100035,22.292890307351254
+# There are 34 stressors with the value of normalized greater than 1, 78 stressors less then 1. 
+
+# Then we use `--cpu-quota=1000` to re-run stress-ng
+docker run --rm --cpuset-cpus=1 --cpu-quota=1000 ljishen/stress-ng > with_issdm-6_1.json
+
+# All produced data moved to srl/kivier/experiments/stress-ng/second/all_data/with_limit/2
+
+root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ln all_data/without_limit/without_kv3_4.json proc_data/with_limit/2/without_kv3_4.json
+root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ln all_data/with_limit/2/with_issdm-6_3.json proc_data/with_limit/2/with_issdm-6_3.json
+
+# Just like we did for the first try, file
+# `srl/kivier/experiments/stress-ng/second/results/with_limit/2/alltests_with_normalized_ordered_issdm-6_results.csv`
+# shows the greatest speedup is,
+# stressng-cpu-int64double,2.651071,issdm-6,with,cpu,False,1,33.66363,12.69812464471906
+# There are 28 stressors with the value of normalized greater than 1, 85 stressors less then 1.
+# It looks like this result is good enough right now.

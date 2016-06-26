@@ -1,12 +1,18 @@
 #!/bin/bash
 
-echo "machine,limits,benchmark,class,lower_is_better,repetition,result" > results/alltests.csv
+if [ "$#" -ne 1 ]; then
+    echo "Please specify the data folder name inside the proc_data folder."
+    exit 0
+fi
 
-for m in `ls -d proc_data/*` ; do
+mkdir -p results/$1
+echo "machine,limits,benchmark,class,lower_is_better,repetition,result" > results/$1/alltests.csv
+
+for m in `ls -d proc_data/$1/*` ; do
   bn=`basename $m .json`
   machine=`echo "$bn" | cut -d _ -f 2`
   method=`echo "$bn" | cut -d _ -f 1`
   repetition=`echo "$bn" | cut -d _ -f 3`
 
-  jq -r --arg m $method --arg n $machine --arg r $repetition '.[] | [$n,  $m, .name, .class, .lower_is_better, $r, .result] | @csv' $m >> results/alltests.csv
+  jq -r --arg m $method --arg n $machine --arg r $repetition '.[] | [$n,  $m, .name, .class, .lower_is_better, $r, .result] | @csv' $m >> results/$1/alltests.csv
 done
