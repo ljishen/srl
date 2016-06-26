@@ -1,0 +1,118 @@
+-------------------------------------------------------------------------------
+PYBENCH 2.0
+-------------------------------------------------------------------------------
+* using CPython 2.7.11 (default, Dec 31 2015, 05:24:35) [GCC 4.7.0]
+* disabled garbage collection
+* system check interval set to maximum: 2147483647
+* using timer: time.time
+
+-------------------------------------------------------------------------------
+Benchmark: without_p27_kv1_3.pybench
+-------------------------------------------------------------------------------
+
+    Rounds: 10
+    Warp:   10
+    Timer:  time.time
+
+    Machine Details:
+       Platform ID:    Linux-3.10.20-rt14katana_v1.0.3+AUTOINC+84a91af059-mips64-with-glibc2.3.3
+       Processor:      
+    
+    Python:
+       Implementation: CPython
+       Executable:     /usr/local/bin/python
+       Version:        2.7.11
+       Compiler:       GCC 4.7.0
+       Bits:           64bit
+       Build:          Dec 31 2015 05:24:35 (#default)
+       Unicode:        UCS2
+
+
+-------------------------------------------------------------------------------
+Comparing with: without_p27_kv1_2.pybench
+-------------------------------------------------------------------------------
+
+    Rounds: 10
+    Warp:   10
+    Timer:  time.time
+
+    Machine Details:
+       Platform ID:    Linux-3.10.20-rt14katana_v1.0.3+AUTOINC+84a91af059-mips64-with-glibc2.3.3
+       Processor:      
+    
+    Python:
+       Implementation: CPython
+       Executable:     /usr/local/bin/python
+       Version:        2.7.11
+       Compiler:       GCC 4.7.0
+       Bits:           64bit
+       Build:          Dec 31 2015 05:24:35 (#default)
+       Unicode:        UCS2
+
+
+Test                             minimum run-time        average  run-time
+                                 this    other   diff    this    other   diff
+-------------------------------------------------------------------------------
+          BuiltinFunctionCalls:   528ms   527ms   +0.3%   531ms   531ms   +0.0%
+           BuiltinMethodLookup:   433ms   433ms   +0.0%   433ms   433ms   -0.0%
+                 CompareFloats:   484ms   484ms   +0.0%   490ms   486ms   +0.8%
+         CompareFloatsIntegers:   816ms   824ms   -0.9%   827ms   830ms   -0.4%
+               CompareIntegers:   352ms   352ms   +0.0%   352ms   352ms   +0.0%
+        CompareInternedStrings:   403ms   409ms   -1.3%   410ms   410ms   +0.1%
+                  CompareLongs:   336ms   336ms   -0.0%   336ms   336ms   +0.0%
+                CompareStrings:   391ms   389ms   +0.5%   396ms   394ms   +0.3%
+                CompareUnicode:   392ms   392ms   +0.0%   392ms   392ms   +0.0%
+    ComplexPythonFunctionCalls:   505ms   508ms   -0.5%   509ms   510ms   -0.2%
+                 ConcatStrings:   697ms   699ms   -0.3%   719ms   719ms   +0.0%
+                 ConcatUnicode:   499ms   499ms   +0.1%   505ms   505ms   +0.0%
+               CreateInstances:   585ms   585ms   -0.0%   590ms   590ms   -0.1%
+            CreateNewInstances:   460ms   461ms   -0.2%   463ms   464ms   -0.1%
+       CreateStringsWithConcat:   449ms   449ms   -0.0%   451ms   451ms   -0.0%
+       CreateUnicodeWithConcat:   283ms   283ms   +0.0%   284ms   284ms   +0.0%
+                  DictCreation:   324ms   325ms   -0.1%   325ms   325ms   -0.1%
+             DictWithFloatKeys:  3327ms  3350ms   -0.7%  3352ms  3374ms   -0.6%
+           DictWithIntegerKeys:   406ms   406ms   -0.0%   406ms   407ms   -0.4%
+            DictWithStringKeys:   370ms   370ms   -0.0%   370ms   370ms   +0.0%
+                      ForLoops:   347ms   347ms   -0.0%   347ms   347ms   -0.0%
+                    IfThenElse:   312ms   312ms   +0.0%   312ms   312ms   +0.0%
+                   ListSlicing:   472ms   472ms   -0.0%   473ms   473ms   -0.0%
+                NestedForLoops:   433ms   433ms   -0.0%   434ms   434ms   -0.0%
+      NestedListComprehensions:   510ms   511ms   -0.0%   518ms   518ms   +0.0%
+          NormalClassAttribute:   475ms   474ms   +0.3%   476ms   475ms   +0.2%
+       NormalInstanceAttribute:   446ms   446ms   +0.0%   446ms   446ms   +0.0%
+           PythonFunctionCalls:   402ms   402ms   -0.0%   402ms   402ms   +0.0%
+             PythonMethodCalls:   580ms   580ms   +0.0%   582ms   582ms   -0.0%
+                     Recursion:   579ms   578ms   +0.1%   579ms   579ms   +0.0%
+                  SecondImport:   523ms   522ms   +0.2%   529ms   530ms   -0.2%
+           SecondPackageImport:   557ms   558ms   -0.1%   564ms   565ms   -0.2%
+         SecondSubmoduleImport:   683ms   683ms   -0.0%   690ms   691ms   -0.1%
+       SimpleComplexArithmetic:  1391ms  1389ms   +0.1%  1397ms  1397ms   +0.0%
+        SimpleDictManipulation:   413ms   413ms   +0.0%   413ms   414ms   -0.1%
+         SimpleFloatArithmetic:   769ms   767ms   +0.2%   770ms   770ms   +0.0%
+      SimpleIntFloatArithmetic:   567ms   566ms   +0.2%   569ms   569ms   +0.0%
+       SimpleIntegerArithmetic:   565ms   566ms   -0.2%   568ms   568ms   -0.0%
+      SimpleListComprehensions:   436ms   436ms   +0.0%   445ms   445ms   +0.0%
+        SimpleListManipulation:   326ms   326ms   -0.0%   326ms   326ms   +0.0%
+          SimpleLongArithmetic:   325ms   325ms   +0.0%   325ms   326ms   -0.1%
+                    SmallLists:   462ms   462ms   -0.0%   464ms   465ms   -0.0%
+                   SmallTuples:   438ms   438ms   -0.1%   441ms   440ms   +0.1%
+         SpecialClassAttribute:   472ms   472ms   +0.1%   473ms   473ms   +0.0%
+      SpecialInstanceAttribute:   603ms   604ms   -0.2%   605ms   607ms   -0.3%
+                StringMappings:   384ms   384ms   +0.1%   385ms   385ms   +0.1%
+              StringPredicates:   413ms   412ms   +0.1%   413ms   413ms   +0.0%
+                 StringSlicing:   270ms   271ms   -0.1%   271ms   271ms   -0.1%
+                     TryExcept:   279ms   279ms   -0.0%   279ms   279ms   -0.0%
+                    TryFinally:   408ms   407ms   +0.2%   409ms   408ms   +0.0%
+                TryRaiseExcept:   407ms   408ms   -0.1%   409ms   409ms   -0.1%
+                  TupleSlicing:   431ms   431ms   -0.0%   433ms   433ms   -0.0%
+               UnicodeMappings:   582ms   582ms   +0.0%   583ms   583ms   -0.0%
+             UnicodePredicates:   395ms   395ms   -0.0%   396ms   396ms   +0.0%
+             UnicodeProperties:   405ms   405ms   +0.1%   407ms   406ms   +0.2%
+                UnicodeSlicing:   393ms   393ms   +0.0%   401ms   401ms   +0.0%
+                   WithFinally:   580ms   580ms   -0.1%   581ms   582ms   -0.1%
+               WithRaiseExcept:   845ms   846ms   -0.1%   848ms   848ms   -0.0%
+-------------------------------------------------------------------------------
+Totals:                         30920ms 30954ms   -0.1% 31100ms 31126ms   -0.1%
+
+(this=without_p27_kv1_3.pybench, other=without_p27_kv1_2.pybench)
+
