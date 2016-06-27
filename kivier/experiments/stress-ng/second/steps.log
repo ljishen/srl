@@ -43,7 +43,7 @@ ln -f all_data/without_limit/without_kv3_4.json proc_data/without_limit/1/withou
 ln -f all_data/without_limit/without_kv1_4.json proc_data/without_limit/1/without_kv1_4.json
 
 # Create merged results to srl/kivier/experiments/stress-ng/second/results/without_limit/1/alltests.csv
-srl/kivier/experiments/stress-ng/second/merge_results without_limit/1
+srl/kivier/experiments/stress-ng/second/json2csv without_limit/1
 
 # Run scipy jupyter notebook to run normalize.py and orderByNorm.py (need pandas library)
 root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# docker run --rm -ti -p 8880:8888 -v `pwd`:/home/jovyan/work:rw --user root --entrypoint=/bin/bash jupyter/scipy-notebook
@@ -84,11 +84,18 @@ torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=2000 --test-
 # srl/kivier/experiments/stress-ng/second/results/calibration_results/issdm-6/2/
 # {"cpu-quota": 1000}
 
-# All the results from `torpor` saved to srl/kivier/experiments/stress-ng/second/results/calibration_results/issdm-6/ 
+# - On the third time, we try to run torpor based on all common stressor from
+# `without_kv3_4.json` and `without_issdm-6_3.json`
+root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ./merge.py all_data/without_limit/without_kv3_4.json all_data/without_limit/without_issdm-6_3.json results/calibration_results/issdm-6/3
+# It created merged.json in the destination folder(the last arg).
+# Then pretty print the result json and output to merged_pretty.json
+root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# cat results/calibration_results/issdm-6/3/merged.json | python -m json.tool > results/calibration_results/issdm-6/3/merged_pretty.json
+# Now, we use this file to create base_without_kv3_4.json, and run torpor
+issdm@issdm-6:~/stress-ng-results$ torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=10000 --test-limit 15 --base-filename base_without_kv3_4.json
+# The results moved to srl/kivier/experiments/stress-ng/second/results/calibration_results/issdm-6/3/
 
 ##### rackform1  #####
 torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=2000 --test-limit 15 --base-filename base_without_kv3_4.json
-
 # We choose `stressng-cpu-sqrt` and `stressng-cpu-cpu`, the results moved to
 # srl/kivier/experiments/stress-ng/second/results/calibration_results/rackform1/1/
 # {"cpu-quota": 1632}   
@@ -106,7 +113,7 @@ docker run --rm --cpuset-cpus=1 --cpu-quota=1750 ljishen/stress-ng > with_issdm-
 root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ln all_data/without_limit/without_kv3_4.json proc_data/with_limit/1/without_kv3_4.json
 root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ln all_data/with_limit/1/with_issdm-6_3.json proc_data/with_limit/1/with_issdm-6_3.json
 
-root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ./merge_results with_limit/1
+root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ./json2csv with_limit/1
 
 # Run jupyter/scipy-notebook, then run the following commands.
 # The produced data is in srl/kivier/experiments/stress-ng/second/results/with_limit/1 
