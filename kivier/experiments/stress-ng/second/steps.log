@@ -146,3 +146,8 @@ issdm@issdm-6:~/stress-ng-results$ docker run --rm --cpuset-cpus=1 --cpu-quota=1
 # After processed with the same scripts described before, the greatest speedup is
 # stressng-cpu-int64double,2.651071,issdm-6,with,cpu,False,1,1274.190066,480.63219204615797
 # It looks bad.
+
+issdm@issdm-6:~/stress-ng-results$ docker run --rm --cpuset-cpus=1 --cpu-quota=1000 --cpu-period=10000 ljishen/stress-ng > with_issdm-6_1.json
+# The produced data moved to srl/kivier/experiments/stress-ng/second/all_data/with_limit/4
+# The greatest speedup is
+# stressng-cpu-int64double,2.651071,issdm-6,with,cpu,False,1,338.585053,127.71632785391262

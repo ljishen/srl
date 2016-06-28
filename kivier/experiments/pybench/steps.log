@@ -46,3 +46,6 @@ issdm@issdm-6:~$ docker run --rm --cpuset-cpus=1 --cpu-quota=1750 --cpu-period=2
 
 issdm@issdm-6:~$ docker run --rm --cpuset-cpus=1 --cpu-quota=1000 --cpu-period=2000 -v /home/issdm/pybench-results/with_limit:/root/results:rw ivotron/pybench -f /root/results/with_p27_issdm-6_5.pybench > pybench-results/with_limit/with_p27_issdm-6_5.prof 2>&1
 # Produced data moved to srl/kivier/experiments/pybench/all_data/with_limit/5
+
+issdm@issdm-6:~$ docker run --rm --cpuset-cpus=1 --cpu-quota=1000 --cpu-period=10000 -v /home/issdm/pybench-results/with_limit:/root/results:rw ivotron/pybench -f /root/results/with_p27_issdm-6_6.pybench > pybench-results/with_limit/with_p27_issdm-6_6.prof 2>&1
+# Produced data moved to srl/kivier/experiments/pybench/all_data/with_limit/6

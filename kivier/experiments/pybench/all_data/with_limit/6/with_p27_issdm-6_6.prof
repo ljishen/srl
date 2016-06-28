@@ -1,0 +1,110 @@
+-------------------------------------------------------------------------------
+PYBENCH 2.0
+-------------------------------------------------------------------------------
+* using CPython 2.7.11 (default, Mar 19 2016, 01:13:31) [GCC 5.3.0]
+* disabled garbage collection
+* system check interval set to maximum: 2147483647
+* using timer: time.time
+
+Creating benchmark: /root/results/with_p27_issdm-6_6.pybench (rounds=10, warp=10)
+
+Calibrating tests. Please wait... done.
+
+Running 10 round(s) of the suite at warp factor 10:
+
+* Round 1 done in 69.252 seconds.
+* Round 2 done in 69.160 seconds.
+* Round 3 done in 69.044 seconds.
+* Round 4 done in 69.106 seconds.
+* Round 5 done in 69.194 seconds.
+* Round 6 done in 69.145 seconds.
+* Round 7 done in 69.237 seconds.
+* Round 8 done in 69.202 seconds.
+* Round 9 done in 68.982 seconds.
+* Round 10 done in 69.099 seconds.
+
+-------------------------------------------------------------------------------
+Benchmark: /root/results/with_p27_issdm-6_6.pybench
+-------------------------------------------------------------------------------
+
+    Rounds: 10
+    Warp:   10
+    Timer:  time.time
+
+    Machine Details:
+       Platform ID:    Linux-3.13.0-88-generic-x86_64-with
+       Processor:      
+    
+    Python:
+       Implementation: CPython
+       Executable:     /usr/local/bin/python
+       Version:        2.7.11
+       Compiler:       GCC 5.3.0
+       Bits:           64bit
+       Build:          Mar 19 2016 01:13:31 (#default)
+       Unicode:        UCS4
+
+
+Test                             minimum  average  operation  overhead
+-------------------------------------------------------------------------------
+          BuiltinFunctionCalls:   1278ms   1322ms    2.59us    2.008ms
+           BuiltinMethodLookup:   1040ms   1077ms    1.03us    2.046ms
+                 CompareFloats:   1000ms   1016ms    0.85us    2.083ms
+         CompareFloatsIntegers:   1070ms   1109ms    1.23us    2.009ms
+               CompareIntegers:   1040ms   1093ms    0.61us    3.616ms
+        CompareInternedStrings:   1073ms   1106ms    0.74us   10.055ms
+                  CompareLongs:    922ms    955ms    0.91us    2.043ms
+                CompareStrings:   1154ms   1159ms    1.16us    6.110ms
+                CompareUnicode:   1079ms   1110ms    1.48us    4.155ms
+    ComplexPythonFunctionCalls:   1277ms   1286ms    6.43us    2.147ms
+                 ConcatStrings:   1857ms   1889ms    3.78us    4.023ms
+                 ConcatUnicode:   1678ms   1717ms    5.72us    2.094ms
+               CreateInstances:   1559ms   1581ms   14.11us    2.089ms
+            CreateNewInstances:   1156ms   1183ms   14.09us    2.099ms
+       CreateStringsWithConcat:   1114ms   1129ms    1.13us    7.002ms
+       CreateUnicodeWithConcat:    959ms    982ms    2.45us    2.077ms
+                  DictCreation:    841ms    871ms    2.18us    1.643ms
+             DictWithFloatKeys:   1119ms   1147ms    1.27us    4.130ms
+           DictWithIntegerKeys:    996ms   1027ms    0.86us    6.088ms
+            DictWithStringKeys:    875ms    887ms    0.74us    6.093ms
+                      ForLoops:    802ms    826ms   33.06us    0.064ms
+                    IfThenElse:    797ms    817ms    0.60us    4.112ms
+                   ListSlicing:   1321ms   1339ms   95.66us    0.080ms
+                NestedForLoops:   1041ms   1069ms    0.71us    0.029ms
+      NestedListComprehensions:   1232ms   1264ms  105.30us    0.068ms
+          NormalClassAttribute:   1116ms   1119ms    0.93us    3.042ms
+       NormalInstanceAttribute:    957ms    963ms    0.80us    3.058ms
+           PythonFunctionCalls:   1078ms   1082ms    3.28us    2.005ms
+             PythonMethodCalls:   1401ms   1433ms    6.37us    1.006ms
+                     Recursion:   1441ms   1499ms   29.98us    2.143ms
+                  SecondImport:   1439ms   1466ms   14.66us    0.136ms
+           SecondPackageImport:   1560ms   1601ms   16.01us    0.138ms
+         SecondSubmoduleImport:   2039ms   2079ms   20.79us    0.134ms
+       SimpleComplexArithmetic:   1000ms   1024ms    1.16us    2.072ms
+        SimpleDictManipulation:    961ms    990ms    0.83us    2.148ms
+         SimpleFloatArithmetic:    958ms    983ms    0.74us    4.045ms
+      SimpleIntFloatArithmetic:    995ms   1014ms    0.77us    4.013ms
+       SimpleIntegerArithmetic:    995ms   1021ms    0.77us    4.013ms
+      SimpleListComprehensions:   1080ms   1090ms   90.82us    0.071ms
+        SimpleListManipulation:    796ms    816ms    0.70us    4.050ms
+          SimpleLongArithmetic:    798ms    823ms    1.25us    2.003ms
+                    SmallLists:   1078ms   1112ms    1.64us    2.074ms
+                   SmallTuples:   1119ms   1154ms    2.14us    2.109ms
+         SpecialClassAttribute:   1089ms   1110ms    0.92us    3.055ms
+      SpecialInstanceAttribute:   1309ms   1323ms    1.10us    3.051ms
+                StringMappings:    957ms    961ms    3.81us    3.053ms
+              StringPredicates:   1060ms   1062ms    1.52us   20.109ms
+                 StringSlicing:    879ms    914ms    1.63us    4.185ms
+                     TryExcept:    877ms    891ms    0.40us    4.123ms
+                    TryFinally:   1161ms   1197ms    7.48us    2.071ms
+                TryRaiseExcept:   1350ms   1364ms   21.32us    2.074ms
+                  TupleSlicing:    962ms    986ms    3.76us    0.052ms
+               UnicodeMappings:   1429ms   1438ms   39.94us    4.165ms
+             UnicodePredicates:   1095ms   1105ms    2.05us   24.128ms
+             UnicodeProperties:   1142ms   1171ms    2.93us   20.115ms
+                UnicodeSlicing:   1239ms   1274ms    2.60us    4.124ms
+                   WithFinally:   1441ms   1495ms    9.34us    2.075ms
+               WithRaiseExcept:   2559ms   2624ms   32.80us    2.149ms
+-------------------------------------------------------------------------------
+Totals:                          67638ms  69142ms
+
