@@ -124,11 +124,10 @@ root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ./json2csv with
 # At this point the file `srl/kivier/experiments/stress-ng/second/results/with_limit/1/alltests_with_normalized_ordered_issdm-6_results.csv`
 # shows the greatest speedup is the following one.
 # stressng-cpu-int64double,2.651071,issdm-6,with,cpu,False,3,59.100035,22.292890307351254
-# There are 34 stressors with the value of normalized greater than 1, 78 stressors less then 1. 
+# There are 34 stressors with the value of normalized greater than 1, 78 stressors less than 1.
 
 # Then we use `--cpu-quota=1000` to re-run stress-ng
 docker run --rm --cpuset-cpus=1 --cpu-quota=1000 ljishen/stress-ng > with_issdm-6_1.json
-
 # All produced data moved to srl/kivier/experiments/stress-ng/second/all_data/with_limit/2
 
 root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ln all_data/without_limit/without_kv3_4.json proc_data/with_limit/2/without_kv3_4.json
@@ -138,4 +137,12 @@ root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# ln all_data/wit
 # `srl/kivier/experiments/stress-ng/second/results/with_limit/2/alltests_with_normalized_ordered_issdm-6_results.csv`
 # shows the greatest speedup is,
 # stressng-cpu-int64double,2.651071,issdm-6,with,cpu,False,1,33.66363,12.69812464471906
-# There are 28 stressors with the value of normalized greater than 1, 85 stressors less then 1.
+# There are 28 stressors with the value of normalized greater than 1, 85 stressors less than 1.
+
+##! We did something wrong to verify the performance of running stress-ng under constrained because of missing `--cpu-period` argument.
+# Now let's redo.
+issdm@issdm-6:~/stress-ng-results$ docker run --rm --cpuset-cpus=1 --cpu-quota=1000 --cpu-period=2000 ljishen/stress-ng > with_issdm-6_1.json
+# The produced data moved to srl/kivier/experiments/stress-ng/second/all_data/with_limit/3 
+# After processed with the same scripts described before, the greatest speedup is
+# stressng-cpu-int64double,2.651071,issdm-6,with,cpu,False,1,1274.190066,480.63219204615797
+# It looks bad.

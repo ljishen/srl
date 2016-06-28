@@ -39,66 +39,10 @@ docker run --rm --cpuset-cpus=1 --cpu-quota=1750 -v /home/issdm/pybench-results/
 
 # Run with different cpu-quota
 docker run --rm --cpuset-cpus=1 --cpu-quota=2637 -v /home/issdm/pybench-results/with_limit:/root/results:rw ivotron/pybench -f /root/results/with_p27_issdm-6_3.pybench > pybench-results/with_limit/with_p27_issdm-6_3.prof 2>&1
-# Produced data moved to srl/kivier/experiments/pybench/all_data/with_limit/2
+# Produced data moved to srl/kivier/experiments/pybench/all_data/with_limit/3
 
+issdm@issdm-6:~$ docker run --rm --cpuset-cpus=1 --cpu-quota=1750 --cpu-period=2000 -v /home/issdm/pybench-results/with_limit:/root/results:rw ivotron/pybench -f /root/results/with_p27_issdm-6_4.pybench > pybench-results/with_limit/with_p27_issdm-6_4.prof 2>&1
+# Produced data moved to srl/kivier/experiments/pybench/all_data/with_limit/4
 
-
-
-###########  issdm-6  ###########
-docker run --rm -ti --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_1.json
-docker run --rm -ti --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_2.json
-docker run --rm -ti --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_3.json
-
-
-###########  rackform1  ###########
-docker run --rm --cpuset-cpus=1 ljishen/stress-ng > without_rackform1_1.json
-docker run --rm --cpuset-cpus=1 ljishen/stress-ng > without_rackform1_2.json
-docker run --rm --cpuset-cpus=1 ljishen/stress-ng > without_rackform1_3.json
-
-
-###########  Choose stressors for calibration  ##########
-# Move all produced data to srl/kivier/experiments/stress-ng/second/all_data
-# Hard link one result file from each machine to srl/kivier/experiments/stress-ng/second/proc_data
-ln -f all_data/without_issdm-6_3.json proc_data/without_issdm-6_3.json
-ln -f all_data/without_rackform1_3.json proc_data/without_rackform1_3.json
-ln -f all_data/without_kv3_4.json proc_data/without_kv3_4.json
-ln -f all_data/without_kv1_4.json proc_data/without_kv1_4.json
-
-# Create merged results to srl/kivier/experiments/stress-ng/second/results/alltests.csv
-srl/kivier/experiments/stress-ng/second/merge_results
-
-# Run scipy jupyter notebook to run normalize.py and orderByNorm.py (need pandas library)
-root@piha:/home/ljishen/srl/kivier/experiments/stress-ng/second# docker run --rm -ti -p 8880:8888 -v `pwd`:/home/jovyan/work:rw --user root --entrypoint=/bin/bash jupyter/scipy-notebook
-
-# Use results from kv3 as base to normalize, then output normalized results to
-# srl/kivier/experiments/stress-ng/second/results/alltests_with_normalized_results.csv
-./normalize.py kv3
-
-# Only retain `machine=issdm-6` from srl/kivier/experiments/stress-ng/second/results/alltests_with_normalized_results.csv 
-# and order rows by values from column `normalizedo`, then output ordered results to
-# srl/kivier/experiments/stress-ng/second/results/alltests_with_normalized_ordered_results.csv
-./orderByNorm.py issdm-6
-
-# At this point, srl/kivier/experiments/stress-ng/second/results/alltests_with_normalized_ordered_results.csv contains normalized values (issdm-6/kv3) order by desc.
-# We choose two stressors from the list in file `alltests_with_normalized_ordered_results.csv`, and create `base_without_kv3_4.json` by manually adding
-# ```
-#  "id": "stress-ng",
-#  "docker_flags": "--rm --cpuset-cpus=1",
-#  "image_name": "ljishen/stress-ng",
-#  "image_args": "",
-# ```
-# to the head of this file and wrap all test results for calibration in a tests array.
-# Example: https://github.com/ivotron/torpor-popper/blob/master/ansible/tune-targets/base.json
-
-
-###########  Run torpor on issdm-6  ###########
-git clone https://github.com/ljishen/torpor.git
-
-# File base_without_kv3_4.json is in current working directory.
-torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=10000 --test-limit 15 --base-filename base_without_kv3_4.json
-
-# - First time, we choose stressor `stressng-cpu-sqrt` and `stressng-cpu-cpu`, the results moved to 
-# srl/kivier/experiments/stress-ng/second/results/calibration_results/issdm-6/1/
-#
-#- Second time, we only choose `stressng-cpu-cpu`, the results moved to
-# srl/kivier/experiments/stress-ng/second/results/calibration_results/issdm-6/2/
+issdm@issdm-6:~$ docker run --rm --cpuset-cpus=1 --cpu-quota=1000 --cpu-period=2000 -v /home/issdm/pybench-results/with_limit:/root/results:rw ivotron/pybench -f /root/results/with_p27_issdm-6_5.pybench > pybench-results/with_limit/with_p27_issdm-6_5.prof 2>&1
+# Produced data moved to srl/kivier/experiments/pybench/all_data/with_limit/5

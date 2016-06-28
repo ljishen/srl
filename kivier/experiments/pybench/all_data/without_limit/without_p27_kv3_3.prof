@@ -87,7 +87,7 @@ Test                             minimum  average  operation  overhead
        SimpleIntegerArithmetic:    625ms    628ms    0.48us    2.333ms
       SimpleListComprehensions:    491ms    497ms   41.45us    0.391ms
         SimpleListManipulation:    399ms    399ms    0.34us    2.531ms
-          SimpleLongArithmetic:    387ms    387ms    0.59us    1.163ms
+          SimpleLongArithmetic:    387ms    387ms    0.59us    1.163ms
                     SmallLists:    517ms    519ms    0.76us    1.553ms
                    SmallTuples:    467ms    468ms    0.87us    1.748ms
          SpecialClassAttribute:    552ms    554ms    0.46us    1.955ms
