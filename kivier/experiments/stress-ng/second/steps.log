@@ -151,3 +151,4 @@ issdm@issdm-6:~/stress-ng-results$ docker run --rm --cpuset-cpus=1 --cpu-quota=1
 # The produced data moved to srl/kivier/experiments/stress-ng/second/all_data/with_limit/4
 # The greatest speedup is
 # stressng-cpu-int64double,2.651071,issdm-6,with,cpu,False,1,338.585053,127.71632785391262
+# There are 53 stressors with the value of normalized greater than 1, 60 stressors less than 1. 
