@@ -30,5 +30,5 @@ if [ ! -f $FOLDER_NAME/himenoBMTxpa ]; then
     done
 fi
 
-mkdir $(dirname $1)
+mkdir -p $(dirname $2)
 $FOLDER_NAME/himenoBMTxpa $1 | tee $2

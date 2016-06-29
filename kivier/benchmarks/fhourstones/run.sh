@@ -30,5 +30,5 @@ if [ ! -f $FOLDER_NAME/SearchGame ]; then
     done
 fi
 
-mkdir $(dirname $1)
+mkdir -p $(dirname $1)
 $FOLDER_NAME/SearchGame < $FOLDER_NAME/inputs | tee $1

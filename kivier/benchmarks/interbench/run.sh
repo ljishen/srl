@@ -33,5 +33,5 @@ fi
 
 echo "This execution performs real time scheduling benchmarks and uses cpu load of 1 with burn load.\n"
 
-mkdir $(dirname $1)
+mkdir -p $(dirname $1)
 $FOLDER_NAME/interbench -L 1 -c -r | tee $1
