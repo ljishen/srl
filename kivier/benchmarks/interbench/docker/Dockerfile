@@ -24,5 +24,7 @@ RUN make -C $FOLDER_NAME
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENTRYPOINT ["/bin/bash", "-c", "$FOLDER_NAME/interbench"]
+RUN mkdir results
+WORKDIR /root/results
+ENTRYPOINT ["/bin/bash", "-c", "../$FOLDER_NAME/interbench", "-r"]
 CMD ["-L", "1"]
