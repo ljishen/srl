@@ -26,5 +26,5 @@ RUN apt-get clean \
 
 RUN mkdir results
 WORKDIR /root/results
-ENTRYPOINT ["/bin/bash", "-c", "../$FOLDER_NAME/interbench", "-r"]
-CMD ["-L", "1"]
+ENTRYPOINT ["/bin/bash", "-c", "../$FOLDER_NAME/interbench"]
+CMD ["-r", "-L", "1"]
