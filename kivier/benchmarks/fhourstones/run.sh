@@ -11,7 +11,7 @@ fi
 FOLDER_NAME=fhourstones
 if [ ! -f $FOLDER_NAME/SearchGame ]; then
     while true; do
-        read -p "Do you wish to The Fhourstones Benchmark (version 3.1)? [y/n] " yn
+        read -p "Do you wish to install The Fhourstones Benchmark (version 3.1)? [y/n] " yn
         case $yn in
             [Yy]* )
                 wget https://tromp.github.io/c4/Fhourstones.tar.gz
@@ -31,4 +31,4 @@ if [ ! -f $FOLDER_NAME/SearchGame ]; then
 fi
 
 mkdir $(dirname $1)
-$FOLDER_NAME/SearchGame < $FOLDER_NAME/inputs > $1
+$FOLDER_NAME/SearchGame < $FOLDER_NAME/inputs | tee $1

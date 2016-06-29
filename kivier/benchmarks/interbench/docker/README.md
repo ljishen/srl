@@ -1,0 +1,1 @@
+# Interbench - The Linux Interactivity BenchmarkUsage:```bashdocker run --rm --cap-add=SYS_ADMIN -ti ljishen/interbench```See [Home Page](https://github.com/Mustaavalkosta/interbench) of The Linux Interactivity Benchmark for more details.
