@@ -17,6 +17,7 @@ if [ ! -f $FOLDER_NAME/SearchGame ]; then
                 wget https://tromp.github.io/c4/Fhourstones.tar.gz
                 mkdir $FOLDER_NAME
                 tar -xf Fhourstones.tar.gz -C $FOLDER_NAME
+                rm Fhourstones.tar.gz
                 gcc -O $FOLDER_NAME/SearchGame.c -o $FOLDER_NAME/SearchGame
                 break
                 ;;
