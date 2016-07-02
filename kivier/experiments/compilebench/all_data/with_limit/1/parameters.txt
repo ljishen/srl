@@ -1,0 +1,1 @@
+docker run --rm -t --cpuset-cpus=1 --cpu-quota=1000 --cpu-period=10000 ljishen/compilebench -i 10 -r 30 | tee with_issdm-6_1.prof

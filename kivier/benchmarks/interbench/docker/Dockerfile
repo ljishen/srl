@@ -18,13 +18,12 @@ RUN wget https://github.com/Mustaavalkosta/interbench/archive/master.zip \
     && rm master.zip \
     && mv interbench-master $FOLDER_NAME
 
-RUN make -C $FOLDER_NAME
+WORKDIR $FOLDER_NAME
+RUN make
 
 # Clean Up
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN mkdir results
-WORKDIR /root/results
-ENTRYPOINT ["/bin/bash", "-c", "../$FOLDER_NAME/interbench"]
+ENTRYPOINT ["./interbench", "-c"]
 CMD ["-r", "-L", "1"]

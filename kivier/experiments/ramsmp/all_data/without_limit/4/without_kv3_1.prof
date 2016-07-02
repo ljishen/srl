@@ -1,0 +1,20 @@
+RAMspeed/SMP (GENERIC) v3.5.0 by Rhett M. Hollander and Paul V. Bolotoff, 2002-09
+
+8Gb per pass mode, 1 processes
+
+FL-POINT & WRITING        1 Kb block: 6746.43 MB/s
+FL-POINT & WRITING        2 Kb block: 6250.93 MB/s
+FL-POINT & WRITING        4 Kb block: 6329.79 MB/s
+FL-POINT & WRITING        8 Kb block: 6359.28 MB/s
+FL-POINT & WRITING       16 Kb block: 6397.26 MB/s
+FL-POINT & WRITING       32 Kb block: 6399.15 MB/s
+FL-POINT & WRITING       64 Kb block: 6405.66 MB/s
+FL-POINT & WRITING      128 Kb block: 6345.85 MB/s
+FL-POINT & WRITING      256 Kb block: 6287.99 MB/s
+FL-POINT & WRITING      512 Kb block: 6198.27 MB/s
+FL-POINT & WRITING     1024 Kb block: 5500.11 MB/s
+FL-POINT & WRITING     2048 Kb block: 5069.96 MB/s
+FL-POINT & WRITING     4096 Kb block: 5069.24 MB/s
+FL-POINT & WRITING     8192 Kb block: 5058.74 MB/s
+FL-POINT & WRITING    16384 Kb block: 5030.84 MB/s
+FL-POINT & WRITING    32768 Kb block: 4924.83 MB/s
