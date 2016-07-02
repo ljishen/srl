@@ -35,3 +35,7 @@ echo -e "This execution performs real time scheduling benchmarks and uses cpu lo
 
 mkdir -p $(dirname $1)
 $FOLDER_NAME/interbench -L 1 -c -r | tee $1
+
+echo "Clean working directory..."
+rm interbench.read
+echo "done."
