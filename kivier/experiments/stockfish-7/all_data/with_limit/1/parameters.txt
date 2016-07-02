@@ -1,0 +1,1 @@
+docker run --rm -t --cpuset-cpus=1 --cpu-quota=1000 --cpu-period=10000 ljishen/stockfish-7:x86-64_gcc | tee with_issdm-6_1.prof
