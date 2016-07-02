@@ -1,0 +1,24 @@
+
+Using 333234 loops per ms, running every load for 30 seconds
+Benchmarking kernel 3.10.20-rt14katana_v1.0.3+AUTOINC+84a91af059 at datestamp 201607022132
+
+--- Benchmarking simulated cpu of Audio real time in the presence of simulated ---
+Load	Latency +/- SD (us)  Max Latency   % Desired CPU  % Deadlines Met
+None	  15.0 +/- 15.6      26.0		 100	        100
+Video	  15.0 +/- 15.9      61.0		 100	        100
+X	  15.0 +/- 15.5      25.0		 100	        100
+Burn	  15.0 +/- 15.5      61.0		 100	        100
+Write	 275.0 +/- 1097.5  14674.0		 100	        100
+Read	  36.0 +/- 43.7     182.0		 100	        100
+Compile	  79.0 +/- 410.0   6793.0		 100	        100
+
+--- Benchmarking simulated cpu of Video real time in the presence of simulated ---
+Load	Latency +/- SD (us)  Max Latency   % Desired CPU  % Deadlines Met
+None	  14.0 +/- 15.5     188.0		 100	        100
+X	  14.0 +/- 15.1      31.0		 100	        100
+Burn	  13.0 +/- 14.0      60.0		 100	        100
+Write	 116.0 +/- 1213.6  33608.0		99.7	       99.7
+Read	  35.0 +/- 40.6     198.0		 100	        100
+Compile	 165.0 +/- 2038.1  39917.0		99.7	       99.7
+
+
