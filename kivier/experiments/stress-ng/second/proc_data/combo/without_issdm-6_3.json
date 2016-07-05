@@ -1,0 +1,962 @@
+[
+{
+"name": "stressng-cpu-ackermann",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 7.413836
+}
+,
+{
+"name": "stressng-cpu-bitops",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1291.89769
+}
+,
+{
+"name": "stressng-cpu-callfunc",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 180710.80185
+}
+,
+{
+"name": "stressng-cpu-cdouble",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 2315.680124
+}
+,
+{
+"name": "stressng-cpu-cfloat",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1618.487845
+}
+,
+{
+"name": "stressng-cpu-clongdouble",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 983.398804
+}
+,
+{
+"name": "stressng-cpu-correlate",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 18.792917
+}
+,
+{
+"name": "stressng-cpu-crc16",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 95.521739
+}
+,
+{
+"name": "stressng-cpu-decimal32",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 737.658758
+}
+,
+{
+"name": "stressng-cpu-decimal64",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 869.534012
+}
+,
+{
+"name": "stressng-cpu-decimal128",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 136.431893
+}
+,
+{
+"name": "stressng-cpu-dither",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 97.103799
+}
+,
+{
+"name": "stressng-cpu-djb2a",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 55321.410198
+}
+,
+{
+"name": "stressng-cpu-double",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 3629.630684
+}
+,
+{
+"name": "stressng-cpu-euler",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 3668892.02772
+}
+,
+{
+"name": "stressng-cpu-explog",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 73.551369
+}
+,
+{
+"name": "stressng-cpu-fft",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 157.708954
+}
+,
+{
+"name": "stressng-cpu-fibonacci",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 9502092.46483
+}
+,
+{
+"name": "stressng-cpu-float",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 15379.618437
+}
+,
+{
+"name": "stressng-cpu-fnv1a",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 56617.153552
+}
+,
+{
+"name": "stressng-cpu-gamma",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 122.824428
+}
+,
+{
+"name": "stressng-cpu-gcd",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 630.725203
+}
+,
+{
+"name": "stressng-cpu-gray",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 3658.960133
+}
+,
+{
+"name": "stressng-cpu-hamming",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 285.928291
+}
+,
+{
+"name": "stressng-cpu-hanoi",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 84.480392
+}
+,
+{
+"name": "stressng-cpu-hyperbolic",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 505.045802
+}
+,
+{
+"name": "stressng-cpu-idct",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 11590.876548
+}
+,
+{
+"name": "stressng-cpu-int128",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 2922.195332
+}
+,
+{
+"name": "stressng-cpu-int64",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 28206.760728
+}
+,
+{
+"name": "stressng-cpu-int32",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 33389.123693
+}
+,
+{
+"name": "stressng-cpu-int16",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 37088.075001
+}
+,
+{
+"name": "stressng-cpu-int8",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 33381.510907
+}
+,
+{
+"name": "stressng-cpu-int128float",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 2494.517723
+}
+,
+{
+"name": "stressng-cpu-int128double",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1685.01459
+}
+,
+{
+"name": "stressng-cpu-int128longdouble",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 402.410026
+}
+,
+{
+"name": "stressng-cpu-int128decimal32",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 591.077945
+}
+,
+{
+"name": "stressng-cpu-int128decimal64",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 645.217146
+}
+,
+{
+"name": "stressng-cpu-int128decimal128",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 131.041426
+}
+,
+{
+"name": "stressng-cpu-int64float",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 10246.297069
+}
+,
+{
+"name": "stressng-cpu-int64double",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 3407.650197
+}
+,
+{
+"name": "stressng-cpu-int64longdouble",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 461.491231
+}
+,
+{
+"name": "stressng-cpu-int32float",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 11938.417932
+}
+,
+{
+"name": "stressng-cpu-int32double",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 3411.702766
+}
+,
+{
+"name": "stressng-cpu-int32longdouble",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 461.853256
+}
+,
+{
+"name": "stressng-cpu-jenkin",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 17104.18686
+}
+,
+{
+"name": "stressng-cpu-jmp",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 22294.738202
+}
+,
+{
+"name": "stressng-cpu-ln2",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 14811.288635
+}
+,
+{
+"name": "stressng-cpu-longdouble",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 472.7594
+}
+,
+{
+"name": "stressng-cpu-loop",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 13610.450297
+}
+,
+{
+"name": "stressng-cpu-matrixprod",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 50.049269
+}
+,
+{
+"name": "stressng-cpu-nsqrt",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 92.670411
+}
+,
+{
+"name": "stressng-cpu-omega",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1754102.51932
+}
+,
+{
+"name": "stressng-cpu-parity",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 10833.48007
+}
+,
+{
+"name": "stressng-cpu-phi",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 7160976.93632
+}
+,
+{
+"name": "stressng-cpu-pi",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 517468.163538
+}
+,
+{
+"name": "stressng-cpu-pjw",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 29055.091885
+}
+,
+{
+"name": "stressng-cpu-prime",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 2.159644
+}
+,
+{
+"name": "stressng-cpu-psi",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 897067.75739
+}
+,
+{
+"name": "stressng-cpu-queens",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 57.014456
+}
+,
+{
+"name": "stressng-cpu-rand",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 12235.946385
+}
+,
+{
+"name": "stressng-cpu-rand48",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1474.256204
+}
+,
+{
+"name": "stressng-cpu-rgb",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 31811.736109
+}
+,
+{
+"name": "stressng-cpu-sdbm",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 54926.600249
+}
+,
+{
+"name": "stressng-cpu-sieve",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 8.549847
+}
+,
+{
+"name": "stressng-cpu-sqrt",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 3842.276549
+}
+,
+{
+"name": "stressng-cpu-trig",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 313.955014
+}
+,
+{
+"name": "stressng-cpu-union",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 17277.637997
+}
+,
+{
+"name": "stressng-cpu-zeta",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 246.019524
+}
+,
+{
+"name": "stressng-cpu-af-alg",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 26693.127347
+},
+{
+"name": "stressng-cpu-bsearch",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 178.952667
+},
+{
+"name": "stressng-cpu-cpu",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 73.084447
+},
+{
+"name": "stressng-cpu-crypt",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 73.116471
+},
+{
+"name": "stressng-cpu-hsearch",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1239.46705
+},
+{
+"name": "stressng-cpu-longjmp",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 48877.235102
+},
+{
+"name": "stressng-cpu-lsearch",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 4.300052
+},
+{
+"name": "stressng-cpu-numa",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 17.495796
+},
+{
+"name": "stressng-cpu-opcode",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1749.206131
+},
+{
+"name": "stressng-cpu-qsort",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 3.699975
+},
+{
+"name": "stressng-cpu-str",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 7762.635409
+},
+{
+"name": "stressng-cpu-stream",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 62.111553
+},
+{
+"name": "stressng-cpu-tsearch",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 7.037773
+},
+{
+"name": "stressng-cpu-vecmath",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 5914.373466
+},
+{
+"name": "stressng-cpu-wcs",
+"class": "cpu",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 4778.27995
+}
+,
+{
+"name": "stressng-cpu-cache-cache",
+"class": "cpu-cache",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 21.100169
+},
+{
+"name": "stressng-cpu-cache-icache",
+"class": "cpu-cache",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 134028.912601
+}
+,
+{
+"name": "stressng-memory-context",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 2944.327377
+},
+{
+"name": "stressng-memory-full",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 79792.234076
+},
+{
+"name": "stressng-memory-lockbus",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1316103.10036
+},
+{
+"name": "stressng-memory-malloc",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 734728.667898
+},
+{
+"name": "stressng-memory-matrix",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1865.824289
+},
+{
+"name": "stressng-memory-memcpy",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 161.819347
+},
+{
+"name": "stressng-memory-memfd",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 1577.399022
+},
+{
+"name": "stressng-memory-mincore",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 19990.962142
+},
+{
+"name": "stressng-memory-null",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 3786649.15852
+},
+{
+"name": "stressng-memory-oom-pipe",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 0.088345
+},
+{
+"name": "stressng-memory-pipe",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 209311.021138
+},
+{
+"name": "stressng-memory-remap",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 342.478909
+},
+{
+"name": "stressng-memory-stackmmap",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 0.09977
+},
+{
+"name": "stressng-memory-str",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 7767.003524
+},
+{
+"name": "stressng-memory-vm",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 27032.196955
+},
+{
+"name": "stressng-memory-vm-rw",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 28.727454
+},
+{
+"name": "stressng-memory-zero",
+"class": "memory",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 86322.470206
+}
+,
+{
+"name": "stressng-matrix-add",
+"class": "matrix",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 23212.987616
+}
+,
+{
+"name": "stressng-matrix-div",
+"class": "matrix",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 15789.83289
+}
+,
+{
+"name": "stressng-matrix-frobenius",
+"class": "matrix",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 24673.017064
+}
+,
+{
+"name": "stressng-matrix-mult",
+"class": "matrix",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 46186.706334
+}
+,
+{
+"name": "stressng-matrix-prod",
+"class": "matrix",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 198.301669
+}
+,
+{
+"name": "stressng-matrix-sub",
+"class": "matrix",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 23016.305233
+}
+,
+{
+"name": "stressng-matrix-hadamard",
+"class": "matrix",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 23453.699627
+}
+,
+{
+"name": "stressng-matrix-trans",
+"class": "matrix",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 29561.569235
+}
+,
+{
+"name": "stressng-string-index",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 24283.606112
+}
+,
+{
+"name": "stressng-string-rindex",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 12809.346115
+}
+,
+{
+"name": "stressng-string-strcasecmp",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 6366.731877
+}
+,
+{
+"name": "stressng-string-strcat",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 7601.825011
+}
+,
+{
+"name": "stressng-string-strchr",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 24358.009066
+}
+,
+{
+"name": "stressng-string-strcoll",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 9752.86534
+}
+,
+{
+"name": "stressng-string-strcmp",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 33940.005066
+}
+,
+{
+"name": "stressng-string-strcpy",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 33479.890553
+}
+,
+{
+"name": "stressng-string-strlen",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 35747.749722
+}
+,
+{
+"name": "stressng-string-strncasecmp",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 6297.984834
+}
+,
+{
+"name": "stressng-string-strncat",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 2232.108941
+}
+,
+{
+"name": "stressng-string-strncmp",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 11885.32947
+}
+,
+{
+"name": "stressng-string-strrchr",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 12810.138483
+}
+,
+{
+"name": "stressng-string-strxfrm",
+"class": "string",
+"units": "bogo-ops-per-second",
+"lower_is_better": false,
+"result": 2571.906193
+}
+]

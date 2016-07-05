@@ -2,6 +2,8 @@
 import sys
 import pandas as pd
 
+VERSION = '1.1'
+
 if len(sys.argv) != 3:
     raise Exception("./normalize.py <base machine name> <data folder name inside results folder>")
 
@@ -24,19 +26,24 @@ df = df[df['machine'] != base_machine]
 
 happened = False
 
+def calc(r1, r2):
+    if r1 >= r2:
+        return r1 / r2
+    else:
+        return -1 * r2 / r1
 
 # lastly, get normalized results for target systems w.r.t. the base system
 def normalize(row):
     if row['lower_is_better'] is True:
-        return row['base_result'] / row['result']
+        return calc(row['base_result'], row['result'])
     else:
         global happened
         happened = True
-        return row['result'] / row['base_result']
+        return calc(row['result'], row['base_result'])
 
 df['normalized'] = df.apply(normalize, axis=1)
 
 print("happened: " + str(happened))
 
 # and rewrite the results, now including the normalized column
-df.to_csv('results/'+folder_name+'/alltests_with_normalized_results.csv', index=False)
+df.to_csv('results/'+folder_name+'/alltests_with_normalized_results_'+VERSION+'.csv', index=False)
