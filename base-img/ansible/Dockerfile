@@ -1,4 +1,4 @@
-# VERSION 1.1
+# VERSION 1.2
 
 FROM ubuntu:latest
 
@@ -9,7 +9,6 @@ MAINTAINER Jianshen Liu <jliu120@ucsc.edu>
 RUN apt-get update \
     && apt-get install -y \
         python-pip \
-        python-dev \
         libffi-dev \
         libssl-dev \
         sshpass \
@@ -19,19 +18,22 @@ RUN apt-get update \
 WORKDIR /opt
 
 # Install Ansible From Source
-RUN git clone git://github.com/ansible/ansible.git --recursive --branch v2.0.2.0-1
+ENV ANSIBLE_VERSION v2.0.2.0-1
+RUN git clone git://github.com/ansible/ansible.git --recursive --branch $ANSIBLE_VERSION
 
 WORKDIR /opt/ansible
 
-# Compiling Ansible
-RUN bash -c 'source ./hacking/env-setup'
+# Compiling && Install Ansible
+RUN bash -c 'source ./hacking/env-setup' \
+    && make install
+
+# Copy Default configuration file
+RUN mkdir /etc/ansible \
+    && cp examples/ansible.cfg /etc/ansible \
+    && cp examples/hosts /etc/ansible
 
 # Clean Up
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV PATH /opt/ansible/bin:$PATH
-ENV PYTHONPATH /opt/ansible/lib:$PYTHONPATH
-
-ENTRYPOINT ["ansible-playbook"]
-CMD ["--version"]
+CMD ["ansible-playbook", "--version"]
