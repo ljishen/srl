@@ -1,13 +1,19 @@
-# VERSION 1.0
+# VERSION 1.1
 
-FROM maven:3-jdk-8
+FROM maven:3-jdk-7
 
 MAINTAINER Jianshen Liu <jliu120@ucsc.edu>
 
 RUN apt-get update \
-    && apt-get install -y git
+    && apt-get install -y \
+        git \
+        ssh \
+        rsync
 
 WORKDIR /root
+
+ENV HADOOP_VERSION 2.7.2
+http://download.nextag.com/apache/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz
 
 ENV SPARK_VERSION 1.6.2
 RUN mkdir spark \
