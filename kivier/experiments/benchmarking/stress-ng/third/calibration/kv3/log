@@ -1,0 +1,1 @@
+root@kv3:~/stress-ng# ./run.sh without_kv3_1.json issdm@192.168.140.81
