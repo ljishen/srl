@@ -1,0 +1,9 @@
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng# docker run --rm -ti --entrypoint=/bin/bash -v `pwd`:/home/jovyan/work:rw --user root jupyter/scipy-notebook
+root@bcb3ea2665ae:~/work/third/calibration# ./merge.py kv3/without_kv3_1.json issdm-6/without_issdm-6_1.json .
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration# cat merged.json | python -m json.tool > merged_pretty.json
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration# cp merged_pretty.json base.json
+
+# Edit base.json and add some headers.
+
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration# scp base.json issdm@issdm-6:/home/issdm/stress-ng-results
+issdm@issdm-6:~/stress-ng-results$ torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=100000 --test-limit 15 --base-filename base.json

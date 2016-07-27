@@ -1,0 +1,11 @@
+RAMspeed/SMP (GENERIC) v3.5.0 by Rhett M. Hollander and Paul V. Bolotoff, 2002-09
+
+8Gb per pass mode, 1 processes
+
+FL-POINT  Copy:      1308.71 MB/s
+FL-POINT  Scale:     94.24 MB/s
+FL-POINT  Add:       133.08 MB/s
+FL-POINT  Triad:     70.92 MB/s
+---
+FL-POINT  AVERAGE:   401.74 MB/s
+

@@ -1,0 +1,6 @@
+root@kv3:~/ramsmp# ./run.sh 1 results/without_kv3_1.prof
+root@kv3:~/ramsmp# ./run.sh 2 results/without_kv3_2.prof
+root@kv3:~/ramsmp# ./run.sh 3 results/without_kv3_3.prof
+root@kv3:~/ramsmp# ./run.sh 4 results/without_kv3_4.prof
+root@kv3:~/ramsmp# ./run.sh 5 results/without_kv3_5.prof
+root@kv3:~/ramsmp# ./run.sh 6 results/without_kv3_6.prof

@@ -1,0 +1,58 @@
+using working directory ../workdir, 10 intial dirs 30 runs
+native unpatched native-0 222MB in 9.18 seconds (24.22 MB/s)
+native patched native-0 109MB in 2.80 seconds (39.17 MB/s)
+native patched compiled native-0 691MB in 4.34 seconds (159.35 MB/s)
+create dir kernel-0 222MB in 8.72 seconds (25.50 MB/s)
+create dir kernel-1 222MB in 9.03 seconds (24.63 MB/s)
+create dir kernel-2 222MB in 9.14 seconds (24.33 MB/s)
+create dir kernel-3 222MB in 9.12 seconds (24.38 MB/s)
+create dir kernel-4 222MB in 9.19 seconds (24.20 MB/s)
+create dir kernel-5 222MB in 9.12 seconds (24.38 MB/s)
+create dir kernel-6 222MB in 9.38 seconds (23.71 MB/s)
+create dir kernel-7 222MB in 9.12 seconds (24.38 MB/s)
+create dir kernel-8 222MB in 9.07 seconds (24.52 MB/s)
+create dir kernel-9 222MB in 9.17 seconds (24.25 MB/s)
+patch dir kernel-5 109MB in 6.74 seconds (16.27 MB/s)
+compile dir kernel-5 691MB in 6.34 seconds (109.08 MB/s)
+compile dir kernel-9 680MB in 5.89 seconds (115.56 MB/s)
+patch dir kernel-9 691MB in 50.94 seconds (13.58 MB/s)
+read dir kernel-5 in 14.97 61.44 MB/s
+read dir kernel-7 in 9.83 22.62 MB/s
+create dir kernel-3116 222MB in 10.55 seconds (21.08 MB/s)
+clean kernel-5 691MB in 0.72 seconds (960.55 MB/s)
+read dir kernel-4 in 9.72 22.88 MB/s
+stat dir kernel-3 in 3.04 seconds
+compile dir kernel-3 680MB in 5.95 seconds (114.39 MB/s)
+clean kernel-9 691MB in 0.72 seconds (960.55 MB/s)
+clean kernel-3 680MB in 0.85 seconds (800.75 MB/s)
+patch dir kernel-3 109MB in 99.08 seconds (1.11 MB/s)
+stat dir kernel-9 in 3.36 seconds
+create dir kernel-6231 222MB in 10.85 seconds (20.50 MB/s)
+delete kernel-6 in 5.19 seconds
+compile dir kernel-9 691MB in 6.44 seconds (107.39 MB/s)
+create dir kernel-70151 222MB in 11.06 seconds (20.11 MB/s)
+clean kernel-9 691MB in 0.74 seconds (934.59 MB/s)
+create dir kernel-78184 222MB in 11.79 seconds (18.86 MB/s)
+compile dir kernel-5 691MB in 6.34 seconds (109.08 MB/s)
+create dir kernel-64250 222MB in 11.02 seconds (20.18 MB/s)
+delete kernel-7 in 5.26 seconds
+stat dir kernel-9 in 3.26 seconds
+patch dir kernel-0 109MB in 98.97 seconds (1.11 MB/s)
+stat dir kernel-5 in 3.58 seconds
+stat dir kernel-8 in 3.15 seconds
+compile dir kernel-9 691MB in 6.51 seconds (106.24 MB/s)
+compile dir kernel-64250 680MB in 5.91 seconds (115.17 MB/s)
+
+run complete:
+==========================================================================
+intial create total runs 10 avg 24.43 MB/s (user 4.12s sys 4.90s)
+create total runs 5 avg 20.14 MB/s (user 3.93s sys 4.97s)
+patch total runs 4 avg 8.02 MB/s (user 1.64s sys 4.91s)
+compile total runs 7 avg 110.99 MB/s (user 0.79s sys 3.61s)
+clean total runs 4 avg 914.11 MB/s (user 0.10s sys 0.37s)
+read tree total runs 2 avg 22.75 MB/s (user 3.34s sys 3.98s)
+read compiled tree total runs 1 avg 61.44 MB/s (user 3.92s sys 7.17s)
+delete tree total runs 2 avg 5.23 seconds (user 2.03s sys 2.70s)
+no runs for delete compiled tree
+stat tree total runs 4 avg 3.20 seconds (user 1.87s sys 0.99s)
+stat compiled tree total runs 1 avg 3.58 seconds (user 2.08s sys 1.12s)
