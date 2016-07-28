@@ -1,0 +1,31 @@
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng# docker run --rm -ti --entrypoint=/bin/bash -v `pwd`:/home/jovyan/work:rw --user root jupyter/scipy-notebook
+root@bcb3ea2665ae:~/work/third/calibration# ./merge.py kv3/without_kv3_1.json issdm-6/without_issdm-6_1.json results/issdm-6/.
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6# cat merged.json | python -m json.tool > merged_pretty.json
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6# cp merged_pretty.json base.json
+
+# Edit base.json and add some headers.
+
+# Run torpor on issdm-6
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6# scp base.json issdm@issdm-6:/home/issdm/stress-ng-results
+issdm@issdm-6:~/stress-ng-results$ torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=100000 --test-limit 15 --base-filename base.json
+
+# Move results to repository
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6# scp issdm@issdm-6:/home/issdm/stress-ng-results/torpor.log .
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6# scp issdm@issdm-6:/home/issdm/stress-ng-results/parameters.json .
+
+# Run torpor on t2.micro instance type
+ubuntu@ip-172-31-37-29:~$ scp ljishen@piha.soe.ucsc.edu:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6/base.json .
+ubuntu@ip-172-31-37-29:~$ torpor/torpor --categories=cpu --show-bench-results --max-cpu-quota=100000 --test-limit 15 --base-filename base.json
+
+# Move results to repository
+ubuntu@ip-172-31-37-29:~$ scp base.json ljishen@piha.soe.ucsc.edu:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/torpor-results/t2.micro/
+ubuntu@ip-172-31-37-29:~$ scp torpor.log ljishen@piha.soe.ucsc.edu:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/torpor-results/t2.micro/
+
+# Convert results to csv file
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6# ../../json2csv issdm-6/with_issdm-6_1.json
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6# ../../json2csv issdm-6/without_issdm-6_1.json
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6# ../../json2csv kv3/without_kv3_1.json
+
+# Create normalized results
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/stress-ng/third/calibration/torpor-results/issdm-6# docker run --rm -ti --entrypoint=/bin/bash -v `pwd`:/home/jovyan/work:rw --user root jupyter/scipy-notebook
+root@82c6107dbe3d:~/work# ./normalize.py kv3

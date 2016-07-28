@@ -1,1 +1,2 @@
 root@kv3:~/compilebench# ./run.sh results/without_kv3_1.prof workdir -i 10 -r 30
+issdm@issdm-6:~$ docker run --rm -t --cpuset-cpus=1 --cpu-quota=7234 --cpu-period=100000 ljishen/compilebench -i 10 -r 30 | tee with_issdm-6_1.prof

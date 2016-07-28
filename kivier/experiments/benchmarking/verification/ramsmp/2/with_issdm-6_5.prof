@@ -1,0 +1,20 @@
+RAMspeed/SMP (Linux) v3.5.0 by Rhett M. Hollander and Paul V. Bolotoff, 2002-09
+
+8Gb per pass mode, 1 processes
+
+FL-POINT & READING        1 Kb block: 1741.80 MB/s
+FL-POINT & READING        2 Kb block: 1717.76 MB/s
+FL-POINT & READING        4 Kb block: 1716.85 MB/s
+FL-POINT & READING        8 Kb block: 1718.42 MB/s
+FL-POINT & READING       16 Kb block: 1684.84 MB/s
+FL-POINT & READING       32 Kb block: 1716.40 MB/s
+FL-POINT & READING       64 Kb block: 1717.27 MB/s
+FL-POINT & READING      128 Kb block: 645.86 MB/s
+FL-POINT & READING      256 Kb block: 650.72 MB/s
+FL-POINT & READING      512 Kb block: 645.95 MB/s
+FL-POINT & READING     1024 Kb block: 304.58 MB/s
+FL-POINT & READING     2048 Kb block: 218.01 MB/s
+FL-POINT & READING     4096 Kb block: 219.16 MB/s
+FL-POINT & READING     8192 Kb block: 220.23 MB/s
+FL-POINT & READING    16384 Kb block: 220.80 MB/s
+FL-POINT & READING    32768 Kb block: 221.35 MB/s

@@ -1,1 +1,2 @@
 root@kv3:~/pybench# ./run.sh results/without_kv3_1
+issdm@issdm-6:~$ docker run --rm -t -v `pwd`/pybench-results:/root/results ljishen/pybench run with_issdm-6_1

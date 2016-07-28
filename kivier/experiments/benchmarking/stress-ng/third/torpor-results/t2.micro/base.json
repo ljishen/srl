@@ -1,6 +1,6 @@
 [{
   "id": "stress-ng",
-  "docker_flags": "--rm --cpuset-cpus=1",
+  "docker_flags": "--rm --cpuset-cpus=0",
   "image_name": "ljishen/stress-ng",
   "image_args": "",
   "tests": [
@@ -723,13 +723,6 @@
         "lower_is_better": false, 
         "name": "stressng-cpu-opcode", 
         "result": 453.989027, 
-        "units": "bogo-ops-per-second"
-    }, 
-    {
-        "class": "cpu", 
-        "lower_is_better": false, 
-        "name": "stressng-cpu-qsort", 
-        "result": 1.200223, 
         "units": "bogo-ops-per-second"
     }, 
     {

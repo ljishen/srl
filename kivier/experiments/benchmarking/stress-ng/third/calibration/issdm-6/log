@@ -1,1 +1,0 @@
-issdm@issdm-6:~/stress-ng-results$ docker run --rm --cpuset-cpus=1 ljishen/stress-ng > without_issdm-6_1.json
