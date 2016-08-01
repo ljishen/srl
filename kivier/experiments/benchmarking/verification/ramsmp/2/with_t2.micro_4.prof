@@ -1,0 +1,20 @@
+RAMspeed/SMP (Linux) v3.5.0 by Rhett M. Hollander and Paul V. Bolotoff, 2002-09
+
+8Gb per pass mode, 1 processes
+
+FL-POINT & WRITING        1 Kb block: 5880.50 MB/s
+FL-POINT & WRITING        2 Kb block: 5398.35 MB/s
+FL-POINT & WRITING        4 Kb block: 5663.33 MB/s
+FL-POINT & WRITING        8 Kb block: 5665.12 MB/s
+FL-POINT & WRITING       16 Kb block: 5393.17 MB/s
+FL-POINT & WRITING       32 Kb block: 5372.00 MB/s
+FL-POINT & WRITING       64 Kb block: 4791.53 MB/s
+FL-POINT & WRITING      128 Kb block: 5010.42 MB/s
+FL-POINT & WRITING      256 Kb block: 4540.80 MB/s
+FL-POINT & WRITING      512 Kb block: 4284.56 MB/s
+FL-POINT & WRITING     1024 Kb block: 4291.83 MB/s
+FL-POINT & WRITING     2048 Kb block: 4287.61 MB/s
+FL-POINT & WRITING     4096 Kb block: 4124.01 MB/s
+FL-POINT & WRITING     8192 Kb block: 4092.72 MB/s
+FL-POINT & WRITING    16384 Kb block: 3880.37 MB/s
+FL-POINT & WRITING    32768 Kb block: 1684.51 MB/s

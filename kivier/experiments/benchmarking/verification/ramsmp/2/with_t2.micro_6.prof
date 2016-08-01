@@ -1,0 +1,11 @@
+RAMspeed/SMP (Linux) v3.5.0 by Rhett M. Hollander and Paul V. Bolotoff, 2002-09
+
+8Gb per pass mode, 1 processes
+
+FL-POINT  Copy:      1611.14 MB/s
+FL-POINT  Scale:     1593.19 MB/s
+FL-POINT  Add:       1923.06 MB/s
+FL-POINT  Triad:     1935.72 MB/s
+---
+FL-POINT  AVERAGE:   1765.78 MB/s
+

@@ -1,0 +1,4 @@
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/verification/results/2# ./parse_all.sh ../../../../../benchmark-suite ../.. kv3
+
+root@piha:/home/ljishen/srl/kivier/experiments/benchmarking/verification# docker run --rm -ti --entrypoint=/bin/bash  -v `pwd`:/home/jovyan/work:rw --user root jupyter/scipy-notebook
+root@b8c83350e200:~/work# ./normalize.py results/2/alltests.csv

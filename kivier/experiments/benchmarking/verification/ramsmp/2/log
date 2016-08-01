@@ -1,9 +1,10 @@
-root@kv3:~/ramsmp# ./run.sh 1 results/without_kv3_1.prof
-root@kv3:~/ramsmp# ./run.sh 2 results/without_kv3_2.prof
-root@kv3:~/ramsmp# ./run.sh 3 results/without_kv3_3.prof
-root@kv3:~/ramsmp# ./run.sh 4 results/without_kv3_4.prof
-root@kv3:~/ramsmp# ./run.sh 5 results/without_kv3_5.prof
-root@kv3:~/ramsmp# ./run.sh 6 results/without_kv3_6.prof
+root@kv3:~/ramsmp# mkdir ramsmp-results
+root@kv3:~/ramsmp# ./run.sh 1 ramsmp-results/without_kv3_1.prof
+root@kv3:~/ramsmp# ./run.sh 2 ramsmp-results/without_kv3_2.prof
+root@kv3:~/ramsmp# ./run.sh 3 ramsmp-results/without_kv3_3.prof
+root@kv3:~/ramsmp# ./run.sh 4 ramsmp-results/without_kv3_4.prof
+root@kv3:~/ramsmp# ./run.sh 5 ramsmp-results/without_kv3_5.prof
+root@kv3:~/ramsmp# ./run.sh 6 ramsmp-results/without_kv3_6.prof
 
 issdm@issdm-6:~$ mkdir ramsmp-results
 issdm@issdm-6:~$ docker run --rm -t --cpuset-cpus=1 --cpu-quota=7234 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 1 | tee ramsmp-results/with_issdm-6_1.prof
@@ -12,3 +13,11 @@ issdm@issdm-6:~$ docker run --rm -t --cpuset-cpus=1 --cpu-quota=7234 --cpu-perio
 issdm@issdm-6:~$ docker run --rm -t --cpuset-cpus=1 --cpu-quota=7234 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 4 | tee ramsmp-results/with_issdm-6_4.prof
 issdm@issdm-6:~$ docker run --rm -t --cpuset-cpus=1 --cpu-quota=7234 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 5 | tee ramsmp-results/with_issdm-6_5.prof
 issdm@issdm-6:~$ docker run --rm -t --cpuset-cpus=1 --cpu-quota=7234 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 6 | tee ramsmp-results/with_issdm-6_6.prof
+
+ubuntu@ip-172-31-37-29:~$ mkdir ramsmp-results
+ubuntu@ip-172-31-37-29:~$ docker run --rm -t --cpuset-cpus=0 --cpu-quota=25750 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 1 | tee ramsmp-results/with_t2.micro_1.prof
+ubuntu@ip-172-31-37-29:~$ docker run --rm -t --cpuset-cpus=0 --cpu-quota=25750 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 2 | tee ramsmp-results/with_t2.micro_2.prof
+ubuntu@ip-172-31-37-29:~$ docker run --rm -t --cpuset-cpus=0 --cpu-quota=25750 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 3 | tee ramsmp-results/with_t2.micro_3.prof
+ubuntu@ip-172-31-37-29:~$ docker run --rm -t --cpuset-cpus=0 --cpu-quota=25750 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 4 | tee ramsmp-results/with_t2.micro_4.prof
+ubuntu@ip-172-31-37-29:~$ docker run --rm -t --cpuset-cpus=0 --cpu-quota=25750 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 5 | tee ramsmp-results/with_t2.micro_5.prof
+ubuntu@ip-172-31-37-29:~$ docker run --rm -t --cpuset-cpus=0 --cpu-quota=25750 --cpu-period=100000 ljishen/ramsmp:Linux_x86_64 -p 1 -b 6 | tee ramsmp-results/with_t2.micro_6.prof

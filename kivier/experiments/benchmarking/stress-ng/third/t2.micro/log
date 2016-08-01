@@ -1,0 +1,2 @@
+ubuntu@ip-172-31-37-29:~$ docker run --rm --cpuset-cpus=0 ljishen/stress-ng > without_t2.micro_1.json
+ubuntu@ip-172-31-37-29:~$ docker run --rm --cpuset-cpus=0 --cpu-quota=7234 --cpu-period=100000 ljishen/stress-ng > with_t2.micro_1.json

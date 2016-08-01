@@ -1,0 +1,11 @@
+RAMspeed/SMP (Linux) v3.5.0 by Rhett M. Hollander and Paul V. Bolotoff, 2002-09
+
+8Gb per pass mode, 1 processes
+
+INTEGER   Copy:      2093.21 MB/s
+INTEGER   Scale:     2098.31 MB/s
+INTEGER   Add:       2093.90 MB/s
+INTEGER   Triad:     2131.05 MB/s
+---
+INTEGER   AVERAGE:   2104.12 MB/s
+

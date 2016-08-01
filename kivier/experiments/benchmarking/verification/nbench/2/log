@@ -1,2 +1,3 @@
 root@kv3:~/nbench# ./run.sh results/without_kv3_1.prof
 issdm@issdm-6:~$ docker run --rm -t --cpuset-cpus=1 --cpu-quota=7234 --cpu-period=100000 ljishen/nbench | tee with_issdm-6_1.prof
+ubuntu@ip-172-31-37-29:~$ docker run --rm -t --cpuset-cpus=0 --cpu-quota=25750 --cpu-period=100000 ljishen/nbench | tee with_t2.micro_1.prof

@@ -1,13 +1,13 @@
 #!/bin/bash -e
 
-if [ "$#" -ne 1 ]; then
-    echo "Please specify a json file as argument."
-    echo "Usage: ./json2csv <json file>"
+if [ "$#" -ne 2 ]; then
+    echo "This script converts(appends) the stress-ng test resutls to csv file."
+    echo "Usage: ./json2csv <json file> <output folder>"
     exit 0
 fi
 
-filename=results/alltests.csv
-mkdir -p $(dirname $filename)
+mkdir -p "$2"
+filename="$2"/alltests.csv
 
 header="machine,limits,benchmark,class,lower_is_better,repetition,result"
 if [ ! -f "$filename" ] || ! grep -q "$header" "$filename"; then

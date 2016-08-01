@@ -1,0 +1,45 @@
+
+Frequency = 10 secs
+Scratch dir = [/tmp]
+Spawning 3 writers...
+Spawning 1 rewriters...
+Spawning 5 commenters...
+Spawning 100 readers...
+Benchmarking for 30 iterations.
+The test will run during 5 minutes.
+
+  Nb blogs   R articles    W articles    R pictures    W pictures    R comments    W comments
+        96       196922          5279        122478          4592         24089          3181
+       122       197847          1386        123117          1215         66180          3136
+       149       196735          1433        120302          1241         71935          2586
+       172       188202          1298        119932          1418         74117          2750
+       193       182708          1308        117078          1193         78721          2380
+       214       177939           980        113772          1327         72664          2771
+       316        98939          5679         63947          5032         45056          2517
+       334          271           753           233           662            30             8
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            1             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             0             0
+       334            0             0             0             0             1             0
+       334           31             0            24             0            13             0
+
+Final score for writes:           334
+Final score for reads :         24659
+

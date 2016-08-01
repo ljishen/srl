@@ -1,14 +1,18 @@
 #!/usr/bin/env python
+
+import os
 import sys
 import pandas as pd
 
 VERSION = '1.0'
 
-if len(sys.argv) != 2:
-    raise Exception("./normalize.py <base machine name>")
+if len(sys.argv) != 3:
+    print("Usage: ./normalize.py <input csv file> <base machine name>")
+    sys.exit()
 
-base_machine = sys.argv[1]
-df = pd.read_csv('results/alltests.csv')
+input_file = sys.argv[1]
+base_machine = sys.argv[2]
+df = pd.read_csv(input_file)
 
 # get a dataframe base results only with columns 'benchmark' and 'result'
 predicate = (df['machine'] == base_machine) & (df['limits'] == 'without')
@@ -45,4 +49,5 @@ df['normalized'] = df.apply(normalize, axis=1)
 print("happened: " + str(happened))
 
 # and rewrite the results, now including the normalized column
-df.to_csv('results/alltests_with_normalized_results_'+VERSION+'.csv', index=False)
+prefix=os.path.splitext(input_file)[0]
+df.to_csv(prefix+'_with_normalized_results_'+VERSION+'.csv', index=False)

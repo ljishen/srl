@@ -1,2 +1,3 @@
 root@kv3:~/pybench# ./run.sh results/without_kv3_1
-issdm@issdm-6:~$ docker run --rm -t -v `pwd`/pybench-results:/root/results ljishen/pybench run with_issdm-6_1
+issdm@issdm-6:~$ docker run --rm -t --cpuset-cpus=1 --cpu-quota=7234 --cpu-period=100000 -v `pwd`/pybench-results:/root/results ljishen/pybench run with_issdm-6_1
+ubuntu@ip-172-31-37-29:~$ docker run --rm -t --cpuset-cpus=0 --cpu-quota=25750 --cpu-period=100000 -v `pwd`/pybench-results:/root/results ljishen/pybench run with_t2.micro_1

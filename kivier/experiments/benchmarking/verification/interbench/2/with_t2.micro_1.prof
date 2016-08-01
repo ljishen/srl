@@ -1,0 +1,24 @@
+
+Using 331714 loops per ms, running every load for 30 seconds
+Benchmarking kernel 3.13.0-92-generic at datestamp 201608010848
+
+--- Benchmarking simulated cpu of Audio real time in the presence of simulated ---
+Load	Latency +/- SD (us)  Max Latency   % Desired CPU  % Deadlines Met
+None	  11.0 +/- 12.0      30.0		 100	        100
+Video	   6.0 +/- 6.2       17.0		 100	        100
+X	  10.0 +/- 10.6      25.0		 100	        100
+Burn	   9.0 +/- 9.9       30.0		 100	        100
+Write	   9.0 +/- 9.8       41.0		 100	        100
+Read	   9.0 +/- 9.6       24.0		 100	        100
+Compile	   9.0 +/- 9.7       45.0		 100	        100
+
+--- Benchmarking simulated cpu of Video real time in the presence of simulated ---
+Load	Latency +/- SD (us)  Max Latency   % Desired CPU  % Deadlines Met
+None	   5.0 +/- 5.6       23.0		 100	        100
+X	   4.0 +/- 5.6       69.0		 100	        100
+Burn	   4.0 +/- 5.3       21.0		 100	        100
+Write	   6.0 +/- 6.9       51.0		 100	        100
+Read	   5.0 +/- 6.4       24.0		 100	        100
+Compile	   6.0 +/- 7.3       45.0		 100	        100
+
+
