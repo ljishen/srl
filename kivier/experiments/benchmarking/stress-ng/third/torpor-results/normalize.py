@@ -4,7 +4,7 @@ import os
 import sys
 import pandas as pd
 
-VERSION = '1.0'
+VERSION = '1.1'
 
 if len(sys.argv) != 3:
     print("Usage: ./normalize.py <input csv file> <base machine name>")
@@ -29,20 +29,14 @@ df = df[df['machine'] != base_machine]
 
 happened = False
 
-def calc(r1, r2):
-    if r1 >= r2:
-        return r1 / r2
-    else:
-        return -1 * r2 / r1
-
 # lastly, get normalized results for target systems w.r.t. the base system
 def normalize(row):
     if row['lower_is_better'] is True:
-        return calc(row['base_result'], row['result'])
+        return row['base_result'] / row['result']
     else:
         global happened
         happened = True
-        return calc(row['result'], row['base_result'])
+        return row['result'] / row['base_result']
 
 df['normalized'] = df.apply(normalize, axis=1)
 
