@@ -1,3 +1,6 @@
 [submodule "ga4gh-testing"]
 	path = ga4gh-testing
 	url = https://github.com/ljishen/ga4gh-testing.git
+[submodule "kividry"]
+	path = kividry
+	url = https://github.com/ljishen/kividry.git

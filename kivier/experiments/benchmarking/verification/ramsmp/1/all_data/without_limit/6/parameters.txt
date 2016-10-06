@@ -1,1 +1,0 @@
-./run.sh 6 results/6/without_kv3_1.prof
