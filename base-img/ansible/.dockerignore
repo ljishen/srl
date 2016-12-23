@@ -1,2 +1,7 @@
 # Documentation
 README.md
+
+.gitignore
+
+ansible.cfg
+hosts
