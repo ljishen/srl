@@ -3,9 +3,6 @@
 FROM phusion/baseimage:0.9.19
 MAINTAINER Jianshen Liu <jliu120@ucsc.edu>
 
-# Use baseimage-docker's init system.
-CMD ["/sbin/my_init"]
-
 RUN apt-get update \
     && apt-get install -y \
         python-dev \
@@ -27,5 +24,8 @@ COPY ansible.cfg /etc/ansible/
 RUN mkdir -p /root/ansible \
     && echo "[local]\nlocalhost ansible_connection=local" > /root/ansible/hosts
 WORKDIR /root/ansible
+
+# Use baseimage-docker's init system.
+ENTRYPOINT ["/sbin/my_init", "--skip-startup-files", "--quiet", "--"]
 
 CMD ["ansible-playbook", "--version"]
