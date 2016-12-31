@@ -19,11 +19,13 @@ RUN pip install cryptography ansible==2.1.3.0
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Install Ansible inventory file
-RUN mkdir -p /etc/ansible \
-    && echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+# Install Ansible default config file
+RUN mkdir -p /etc/ansible
+COPY ansible.cfg /etc/ansible/
 
-RUN mkdir -p /root/ansible
+# Install Ansible default inventory file
+RUN mkdir -p /root/ansible \
+    && echo "[local]\nlocalhost ansible_connection=local" > /root/ansible/hosts
 WORKDIR /root/ansible
 
 CMD ["ansible-playbook", "--version"]
