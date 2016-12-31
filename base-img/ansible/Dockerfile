@@ -1,7 +1,10 @@
-# VERSION 1.3
+# VERSION 1.4
 
-FROM ubuntu
+FROM phusion/baseimage:0.9.19
 MAINTAINER Jianshen Liu <jliu120@ucsc.edu>
+
+# Use baseimage-docker's init system.
+CMD ["/sbin/my_init"]
 
 RUN apt-get update \
     && apt-get install -y \
