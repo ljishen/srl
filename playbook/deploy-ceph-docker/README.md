@@ -1,6 +1,12 @@
 # deploy-ceph-docker
 
 ## Usage
+Install roles included in requirements.yml
+
+```bash
+ansible-galaxy install -r requirements.yml
+```
+
 Check the hosts file before you run this command
 
 ```bash
