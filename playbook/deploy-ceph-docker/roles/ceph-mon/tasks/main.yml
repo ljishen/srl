@@ -1,0 +1,41 @@
+---
+- include: ../../common/tasks/dist_conf.yml
+
+- name: start monitor container
+  docker_container:
+    command: mon
+    detach: True
+    image: "{{ ceph_image }}"
+    name: "{{ container_name_prefix }}_{{ container_names.mon }}"
+    network_mode: host
+    pull: yes
+    restart_policy: on-failure
+    state: started
+    volumes:
+      - /etc/ceph:/etc/ceph:rw
+      - /var/lib/ceph/:/var/lib/ceph/:rw
+    env:
+      MON_IP: "{{ ansible_default_ipv4.address }}"
+      CEPH_PUBLIC_NETWORK: "{{ public_network }}"
+
+- local_action: file path="{{ local_tmp_dir }}{{ item | dirname }}" state="directory"
+  with_items:
+    - /etc/ceph
+    - /var/lib/ceph
+  when: inventory_hostname == groups['mons'][0]
+
+- name: pull configurations and keys from initial monitor
+  synchronize:
+    src: "{{ item }}"
+    dest: "{{ local_tmp_dir }}{{ item | dirname }}"
+    mode: pull
+    archive: yes
+    compress: yes
+    recursive: yes
+    checksum: yes
+    times: yes
+    perms: yes
+  with_items:
+    - /etc/ceph
+    - /var/lib/ceph
+  when: inventory_hostname == groups['mons'][0]

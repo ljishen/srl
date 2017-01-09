@@ -1,0 +1,16 @@
+---
+- include: ../../common/tasks/dist_conf.yml
+
+- name: start rgw container
+  docker_container:
+    command: rgw
+    detach: True
+    image: "{{ ceph_image }}"
+    name: "{{ container_name_prefix }}_{{ container_names.rgw }}"
+    network_mode: host
+    pull: yes
+    restart_policy: on-failure
+    state: started
+    volumes:
+      - /etc/ceph:/etc/ceph:rw
+      - /var/lib/ceph/:/var/lib/ceph/:rw

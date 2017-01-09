@@ -1,0 +1,22 @@
+---
+- name: get net mask
+  set_fact: net_mask="{{ ansible_default_ipv4.network }}/{{ ansible_default_ipv4.netmask }}"
+
+- name: verify IP address
+  fail: msg="{{ inventory_hostname }} (interpreted as {{ ansible_default_ipv4.address }}) is not in the public network {{ public_network }}"
+  when: net_mask | ipaddr('net') != public_network
+
+- name: distribute configurations and keys
+  synchronize:
+    src: "{{ local_tmp_dir }}{{ item }}"
+    dest: "{{ item | dirname }}"
+    archive: yes
+    compress: yes
+    recursive: yes
+    checksum: yes
+    times: yes
+    perms: yes
+  with_items:
+    - /etc/ceph
+    - /var/lib/ceph
+  when: inventory_hostname != groups['mons'][0]

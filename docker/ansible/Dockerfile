@@ -1,4 +1,4 @@
-# VERSION 1.4
+# VERSION 1.5
 
 FROM phusion/baseimage:0.9.19
 MAINTAINER Jianshen Liu <jliu120@ucsc.edu>
@@ -8,7 +8,9 @@ RUN apt-get update \
         python-dev \
         python-pip \
         libssl-dev \
-        libffi-dev
+        libffi-dev \
+        rsync \    # dependency of synchronize module
+        python-netaddr    # dependency of ipaddr filter
 
 RUN pip install cryptography ansible==2.1.3.0
 

@@ -1,0 +1,18 @@
+---
+- include: ../../common/tasks/dist_conf.yml
+
+- name: start mds container
+  docker_container:
+    command: mds
+    detach: True
+    image: "{{ ceph_image }}"
+    name: "{{ container_name_prefix }}_{{ container_names.mds }}"
+    network_mode: host
+    pull: yes
+    restart_policy: on-failure
+    state: started
+    volumes:
+      - /etc/ceph:/etc/ceph:rw
+      - /var/lib/ceph/:/var/lib/ceph/:rw
+    env:
+      CEPHFS_CREATE: 1

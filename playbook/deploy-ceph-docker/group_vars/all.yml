@@ -1,0 +1,13 @@
+---
+public_network: 192.168.140.0/24
+clean_config: true
+
+ceph_image: ceph/daemon
+container_name_prefix: srl
+container_names:
+  mon: ceph-mon
+  osd: ceph-osd
+  mds: ceph-mds
+  rgw: ceph-rgw
+
+local_tmp_dir: /tmp

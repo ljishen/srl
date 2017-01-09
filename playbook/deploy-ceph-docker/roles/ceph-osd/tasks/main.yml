@@ -1,0 +1,33 @@
+---
+- name: install required package for sgdisk
+  package:
+    name: gdisk
+    state: present
+
+- name: unmount all partitions on device {{ osd_device }}
+  command: /bin/umount {{ osd_device }}?
+  ignore_errors: yes
+
+- name: zap (destroy) the GPT and MBR data structures on {{ osd_device }}
+  command: /sbin/sgdisk -Z {{ osd_device }}
+
+- include: ../../common/tasks/dist_conf.yml
+
+- name: start osd container
+  docker_container:
+    command: osd
+    detach: True
+    image: "{{ ceph_image }}"
+    name: "{{ container_name_prefix }}_{{ container_names.osd }}"
+    network_mode: host
+    privileged: yes
+    pull: yes
+    restart_policy: on-failure
+    state: started
+    volumes:
+      - /etc/ceph:/etc/ceph:rw
+      - /var/lib/ceph/:/var/lib/ceph/:rw
+      - /dev:/dev:rw
+    env:
+      OSD_DEVICE: "{{ osd_device }}"
+      OSD_FORCE_ZAP: 1

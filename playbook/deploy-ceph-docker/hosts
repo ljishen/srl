@@ -1,0 +1,18 @@
+[mons]
+issdm-32
+issdm-38
+issdm-30
+
+[osds]
+issdm-32    osd_device=/dev/sdd
+issdm-38    osd_device=/dev/sdd
+issdm-30    osd_device=/dev/sdd
+
+[mdss]
+issdm-32
+
+[rgws]
+issdm-32
+
+[all:vars]
+ansible_user=issdm
