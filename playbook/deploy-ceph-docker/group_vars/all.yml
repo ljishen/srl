@@ -1,6 +1,6 @@
 ---
 public_network: 192.168.140.0/24
-clean_config: true
+clean_configs: true
 
 ceph_image: ceph/daemon
 container_name_prefix: srl

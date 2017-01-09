@@ -45,7 +45,7 @@
       with_items:
         - /etc/ceph
         - /var/lib/ceph
-      when: clean_config
+      when: clean_configs
 
 - hosts: mons
   become: True
