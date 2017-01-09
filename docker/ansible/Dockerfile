@@ -3,14 +3,16 @@
 FROM phusion/baseimage:0.9.19
 MAINTAINER Jianshen Liu <jliu120@ucsc.edu>
 
+# rsync is required by ansible synchronize module
+# python-netaddr is required by Jinja2 ipaddr filter
 RUN apt-get update \
     && apt-get install -y \
         python-dev \
         python-pip \
         libssl-dev \
         libffi-dev \
-        rsync \    # dependency of synchronize module
-        python-netaddr    # dependency of ipaddr filter
+        rsync \
+        python-netaddr
 
 RUN pip install cryptography ansible==2.1.3.0
 
