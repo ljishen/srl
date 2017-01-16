@@ -12,7 +12,8 @@ RUN apt-get update \
         libssl-dev \
         libffi-dev \
         rsync \
-        python-netaddr
+        python-netaddr \
+        bc
 
 RUN pip install cryptography ansible==2.1.3.0
 
